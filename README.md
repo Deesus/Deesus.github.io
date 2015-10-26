@@ -9,3 +9,8 @@ My Personal _GitHub Pages_ site.
 
 ___________
 Feel free to fork and modify it to your liking.
+
+
+###### License
+
+Copyright (c) 2015 Dee Reddy. MIT License.
