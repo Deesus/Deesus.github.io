@@ -223,7 +223,7 @@ a:visited {
 	border: 2px solid #bfbfbf;
 	width: 20%;
 	min-width: 300px;
-	transition: all 1s ease;
+	transition: all 0.5s ease;
 	background: none;
 	overflow: hidden;
 	background: #cdcdcd;
@@ -231,10 +231,12 @@ a:visited {
 
 figcaption{
 	margin: 1.4rem;
+	color: black;
 }
 
 .portfolio-item:hover {
-	transition: all 1s ease;
+	transition: all 0.5s ease;
+	box-shadow: 4px 4px 20px -1px rgba(0, 0, 0, 0.75);
 }
 
 .bottom-pic {
