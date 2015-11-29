@@ -4,12 +4,12 @@
 
 @font-face {
 	font-family: nilland;
-	src: url('nillandRegular.ttf');
+	src: url('../fonts/nillandRegular.ttf');
 }
 
 @font-face {
 	font-family: 'VarelaRound';
-	src: url('VarelaRound.ttf');
+	src: url('../fonts/VarelaRound.ttf');
 }
 
 body {
@@ -19,7 +19,6 @@ body {
 	margin: 0;
 	background: rgb(212,216,212);
 	background-size: 100% 100%;
-
 }
 
 html, body {
@@ -125,7 +124,7 @@ a:visited {
 /********************/
 
 #home {
-	background: url('img/chalkboard2.jpg') no-repeat fixed; 
+	background: url('../img/chalkboard2.jpg') no-repeat fixed; 
 	min-height: 1000px;
 	max-width: 1920px; 
 	position: relative; 
@@ -152,7 +151,7 @@ a:visited {
 
 #about {
 	font-family: nilland;
-	background: url('img/circles_black.jpg') 50% 0 repeat fixed;
+	background: url('../img/circles_black.jpg') 50% 0 repeat fixed;
 	min-height: 1000px;
 	max-width: 1920px; 
 	position: relative;
@@ -167,7 +166,7 @@ a:visited {
 
 #portfolio {
 	font-family: nilland; 	
-	background: url('img/circles.jpg') 50% 0 repeat fixed;
+	background: url('../img/circles.jpg') 50% 0 repeat fixed;
 	min-height: 1000px;
 	max-width: 1920px; 
 	position: relative;
@@ -185,7 +184,7 @@ a:visited {
 
 #contact {
 	font-family: nilland;
-	background: url('img/contact_bg.png') 50% 0 repeat fixed;
+	background: url('../img/contact_bg.png') 50% 0 repeat fixed;
 	position: relative; 
 	color: white;
 }
