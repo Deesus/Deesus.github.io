@@ -19,7 +19,7 @@ index.html
         ├── fonts/
         ├── img/
         ├── scripts/
-        │	└── scripts.js
+        │   └── scripts.js
         └── stylesheets/
             └── styles.css
 ```
