@@ -1,0 +1,54 @@
+/*******************
+ Author: Dee Reddy (deesus@yandex.com)
+ *******************/
+@import "resets",
+        "flexgrid",
+        "typography",
+        "utility";
+        // _media.scss (at end)
+// ==========================================================================
+
+/**************
+ Sticky Footer
+ **************/
+/* for sticky footer, wrap everything but the footer in this selector: */
+body {
+  @include display-flex;
+  @include flex-direction(column);
+  -webkit-box-orient: vertical;
+  min-height: 100vh;
+}
+
+#body-wrapper {
+  @include flex(1);
+}
+
+/*******************
+ Default Styles
+ *******************/
+// TODO: set defaults for link color, font-family, header font, sizes, etc.
+
+img {
+  /* image automatically resizes to max-width of the boundary: */
+  max-width: 100%;
+  height: auto;
+
+  // removes the extra space on bottom of a div that contains an image:
+  display: block;
+}
+
+/*******************
+ Buttons
+ *******************/
+button, .button, input[type='button'], input[type='submit'], input[type='reset'] {
+
+}
+
+/*******************
+ Menus
+ *******************/
+
+/*******************
+ Media queries
+ *******************/
+@import "media";
