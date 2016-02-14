@@ -1,6 +1,6 @@
-/*******************
- Author: Dee Reddy (deesus@yandex.com)
- *******************/
+/*
+  Author: Dee Reddy (deesus@yandex.com)
+  */
 /**************
  Resets
  **************/
@@ -17,6 +17,9 @@ html {
   box-sizing: inherit;
 }
 
+/**************
+ Grid
+ **************/
 .container-fluid {
   box-sizing: border-box;
   margin-left: auto;
@@ -42,6 +45,7 @@ html {
   margin-right: -1rem;
 }
 
+/* columns: */
 [class^='col-'] {
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -139,7 +143,9 @@ html {
   max-width: 100%;
 }
 
-/* Align Flex Items: */
+/**************
+ Align Flex Items (i.e. flex utilities):
+ **************/
 /* main axis: */
 .justify-start {
   -webkit-justify-content: flex-start;
@@ -180,6 +186,9 @@ html {
   align-items: stretch;
 }
 
+/**************
+ Typography:
+ **************/
 html {
   /* we use 10px = 1rem for easy calculations (e.g. 3rem = 30px) */
   font-size: 10px;
@@ -226,6 +235,32 @@ h6 {
   font-size: 2rem;
 }
 
+/* ========================================================================== */
+/*******************
+ Styles
+ *******************/
+img {
+  /* image automatically resizes to max-width of the boundary: */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: deepskyblue;
+}
+
+a:hover {
+  color: #0FA0CE;
+}
+
+.thi {
+  color: red;
+}
+
+/*******************
+ Buttons
+ *******************/
 /**************
  Sticky Footer
  **************/
@@ -245,21 +280,10 @@ body {
 }
 
 /*******************
- Default Styles
+ Media queries
  *******************/
-img {
-  /* image automatically resizes to max-width of the boundary: */
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/*******************
- Utility Functions
- *******************/
-/*******************
- Buttons
- *******************/
-/*******************
- Menus
- *******************/
+/* Phones */
+/* Small Screens: */
+/* Tablets */
+/* Laptops/Desktops: */
+/* Large Screens: */
