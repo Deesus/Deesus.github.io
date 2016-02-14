@@ -190,8 +190,8 @@ html {
  Typography:
  **************/
 html {
-  /* we use 10px = 1rem for easy calculations (e.g. 3rem = 30px) */
-  font-size: 10px;
+  /* 1rem = 10px for easy calculations (e.g. 3rem = 30px): */
+  font-size: 62.5%;
 }
 
 body {
@@ -235,6 +235,24 @@ h6 {
   font-size: 2rem;
 }
 
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../public/assets/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../public/assets/OpenSans-Light.ttf");
+}
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../public/assets/OpenSans-Bold.ttf");
+}
 /* ========================================================================== */
 /*******************
  Styles
@@ -252,10 +270,6 @@ a {
 
 a:hover {
   color: #0FA0CE;
-}
-
-.thi {
-  color: red;
 }
 
 /*******************

@@ -8,6 +8,28 @@
         "utility";
         // _media.scss (at end)
 
+// TODO: replace with compass font-face mixin:
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../public/assets/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../../public/assets/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../public/assets/OpenSans-Bold.ttf');
+}
+
 $link-blue:   deepskyblue;
 $link-hover:  #0FA0CE;
 /* ========================================================================== */
@@ -32,9 +54,6 @@ a {
 a:hover {
   color: $link-hover; }
 
-.thi {
-  color: red;
-}
 /*******************
  Buttons
  *******************/
