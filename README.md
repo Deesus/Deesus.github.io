@@ -3,8 +3,11 @@
 
 
 #### TODO:
-+ [ ] Add landing page
-+ [ ] Add portfolio section
+- **Main**:
++ [ ] Solve Holy Grail Layout
++ [ ] Solve: what to do when text overflows flexbox section? (c.f when resize browser)
+
+- **Future**:
 + [ ] Add blog section (tao of python, sticky footer, virtualenv, etc.)
 
 #### License
