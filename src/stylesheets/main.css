@@ -186,6 +186,24 @@ html {
   align-items: stretch;
 }
 
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/OpenSans-Light.ttf");
+}
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/OpenSans-Bold.ttf");
+}
 /**************
  Typography:
  **************/
@@ -197,7 +215,7 @@ html {
 body {
   /* using `em` instead of `rem` in body b/c bug in chrome (use `rem` in all other areas) */
   font-size: 1.5em;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "OpenSans", Helvetica, Arial, sans-serif;
   color: #222;
   /* NOT pure black */
 }
@@ -208,33 +226,73 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
   margin-bottom: 2rem;
+  font-weight: 300;
 }
 
 h1 {
-  font-size: 12rem;
+  font-size: 4.0rem;
+  line-height: 1.2;
+  letter-spacing: -.1rem;
 }
 
 h2 {
-  font-size: 6rem;
+  font-size: 3.6rem;
+  line-height: 1.25;
+  letter-spacing: -.1rem;
 }
 
 h3 {
-  font-size: 4rem;
+  font-size: 3.0rem;
+  line-height: 1.3;
+  letter-spacing: -.1rem;
 }
 
 h4 {
-  font-size: 3rem;
+  font-size: 2.4rem;
+  line-height: 1.35;
+  letter-spacing: -.08rem;
 }
 
 h5 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -.05rem;
 }
 
 h6 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: 0;
 }
 
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 {
+    font-size: 5.0rem;
+  }
+
+  h2 {
+    font-size: 4.2rem;
+  }
+
+  h3 {
+    font-size: 3.6rem;
+  }
+
+  h4 {
+    font-size: 3.0rem;
+  }
+
+  h5 {
+    font-size: 2.4rem;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+  }
+}
 .no-pad, .no-padding {
   padding: 0;
   margin: 0;
@@ -259,24 +317,6 @@ h6 {
   text-align: center;
 }
 
-@font-face {
-  font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 400;
-  src: url("../../public/assets/OpenSans-Regular.ttf");
-}
-@font-face {
-  font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 300;
-  src: url("../../public/assets/OpenSans-Light.ttf");
-}
-@font-face {
-  font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 600;
-  src: url("../../public/assets/OpenSans-Bold.ttf");
-}
 /* ========================================================================== */
 /* ==========================================================================
    Styles
@@ -316,6 +356,14 @@ section {
 /*******************
  Portfolio
  *******************/
+.portfolio-tiles li {
+  background: white;
+  border-radius: 4px;
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
 /**************
  Footer
  **************/
