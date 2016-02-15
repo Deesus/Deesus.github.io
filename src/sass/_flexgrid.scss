@@ -16,7 +16,7 @@
 
 .row {
   @include display-flex;
-  @include flex(0 1 auto);
+  @include flex(0 1 auto);  // shorthand for flex-grow, flex-shrink, flex-basis
   @include flex-direction(row);
   @include flexbox((
           box-orient:     horizontal,

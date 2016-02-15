@@ -27,6 +27,10 @@ img {
   display:    block;
 }
 
+ul {
+  list-style: none;
+}
+
 a {
   color: $link-blue; }
 a:hover {
@@ -58,11 +62,24 @@ section {
 /*******************
  Portfolio
  *******************/
+#portfolio {
+  background-color: rgb(250, 250, 250);
+}
+
 .portfolio-tiles {
   li {
+    display: inline-flex;
+    @include flex-direction(row);
+
     background: white;
     border-radius: 4px;
     @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.2));
+    width: 30%;
+    padding: 1rem;
+    /* thablets: */
+    @media screen and (max-width: 550px) {
+      
+    }
   }
 }
 
