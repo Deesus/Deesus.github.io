@@ -235,6 +235,30 @@ h6 {
   font-size: 2rem;
 }
 
+.no-pad, .no-padding {
+  padding: 0;
+  margin: 0;
+}
+
+.no-fluid {
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+
+.responsive, .margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* changes flex display to 'block': */
+.clear {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
 @font-face {
   font-family: 'OpenSans';
   font-style: normal;
@@ -254,9 +278,9 @@ h6 {
   src: url("../../public/assets/OpenSans-Bold.ttf");
 }
 /* ========================================================================== */
-/*******************
- Styles
- *******************/
+/* ==========================================================================
+   Styles
+   ========================================================================== */
 img {
   /* image automatically resizes to max-width of the boundary: */
   max-width: 100%;
@@ -275,8 +299,25 @@ a:hover {
 /*******************
  Buttons
  *******************/
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+/* all sections (except footer, header): */
+section {
+  height: 100vh;
+}
+
+/*******************
+ Home
+ *******************/
+/*******************
+ About
+ *******************/
+/*******************
+ Portfolio
+ *******************/
 /**************
- Sticky Footer
+ Footer
  **************/
 /* for sticky footer, wrap everything but the footer in this selector: */
 body {
@@ -291,6 +332,10 @@ body {
 #body-wrapper {
   -webkit-flex: 1;
   flex: 1;
+}
+
+footer {
+  background: #c0c0c0;
 }
 
 /*******************

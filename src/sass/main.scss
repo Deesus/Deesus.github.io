@@ -11,23 +11,23 @@
 // TODO: replace with compass font-face mixin:
 @font-face {
   font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../../public/assets/OpenSans-Regular.ttf');
+  font-style:   normal;
+  font-weight:  400;
+  src:          url('../../public/assets/OpenSans-Regular.ttf');
 }
 
 @font-face {
-  font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 300;
-  src: url('../../public/assets/OpenSans-Light.ttf');
+  font-family:  'OpenSans';
+  font-style:   normal;
+  font-weight:  300;
+  src:          url('../../public/assets/OpenSans-Light.ttf');
 }
 
 @font-face {
-  font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../../public/assets/OpenSans-Bold.ttf');
+  font-family:  'OpenSans';
+  font-style:   normal;
+  font-weight:  600;
+  src:          url('../../public/assets/OpenSans-Bold.ttf');
 }
 
 $link-blue:   deepskyblue;
@@ -35,18 +35,18 @@ $link-hover:  #0FA0CE;
 /* ========================================================================== */
 
 
-/*******************
- Styles
- *******************/
+/* ==========================================================================
+   Styles
+   ========================================================================== */
 // TODO: set defaults for link color, font-family, header font, sizes, etc.
 
 img {
   /* image automatically resizes to max-width of the boundary: */
-  max-width: 100%;
-  height: auto;
+  max-width:  100%;
+  height:     auto;
 
   // removes the extra space on bottom of a div that contains an image:
-  display: block;
+  display:    block;
 }
 
 a {
@@ -61,8 +61,29 @@ button, .button, input[type='button'], input[type='submit'], input[type='reset']
 
 }
 
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+/* all sections (except footer, header): */
+section {
+  height: 100vh;
+}
+
+/*******************
+ Home
+ *******************/
+
+/*******************
+ About
+ *******************/
+
+/*******************
+ Portfolio
+ *******************/
+
+
 /**************
- Sticky Footer
+ Footer
  **************/
 /* for sticky footer, wrap everything but the footer in this selector: */
 body {
@@ -74,6 +95,10 @@ body {
 
 #body-wrapper {
   @include flex(1);
+}
+
+footer {
+  background: #c0c0c0;
 }
 
 /*******************
