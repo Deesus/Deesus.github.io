@@ -363,6 +363,14 @@ section {
   height: 100vh;
 }
 
+.title {
+  padding: 5rem 0 5rem 0;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
 /*******************
  Home
  *******************/
@@ -378,6 +386,16 @@ section {
   -moz-box-shadow: inset 0 2px 4px 0 rgba(210, 210, 210, 0.5);
   -webkit-box-shadow: inset 0 2px 4px 0 rgba(210, 210, 210, 0.5);
   box-shadow: inset 0 2px 4px 0 rgba(210, 210, 210, 0.5);
+}
+#portfolio hr {
+  color: #dddddd;
+}
+
+.portfolio-tiles {
+  width: 74%;
+}
+.portfolio-tiles img {
+  border-radius: 4px;
 }
 
 .portfolio-tiles > div {

@@ -6,6 +6,7 @@
 - **Main**:
 + [ ] Solve Holy Grail Layout
 + [ ] Solve: what to do when text overflows flexbox section? (c.f when resize browser)
++ [ ] Fix positioning/overlapping when zoomed
 
 - **Future**:
 + [ ] Add blog section (tao of python, sticky footer, virtualenv, etc.)
