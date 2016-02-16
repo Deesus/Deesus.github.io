@@ -28,7 +28,7 @@ html {
   padding-left: 2rem;
 }
 
-.row {
+.row, .row-no-fluid {
   display: -webkit-flex;
   display: flex;
   -webkit-flex: 0 1 auto;
@@ -43,6 +43,12 @@ html {
   flex-wrap: wrap;
   margin-left: -1rem;
   margin-right: -1rem;
+}
+
+/* use '.row-no-fluid' if NOT nested in container-fluid */
+.row-no-fluid {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* columns: */
@@ -299,12 +305,6 @@ h6 {
   margin: 0;
 }
 
-/* use in '.row' if NOT nested in fluid */
-.no-fluid {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 /* use if nested in fluid and want to clear */
 .clear-fluid {
   margin-left: -2rem;
@@ -380,18 +380,19 @@ section {
   box-shadow: inset 0 2px 4px 0 rgba(210, 210, 210, 0.5);
 }
 
-.portfolio-tiles li {
-  display: inline;
-  -webkit-flex-direction: row;
-  flex-direction: row;
+.portfolio-tiles > div {
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-  width: 30%;
   padding: 1rem;
-  background: white;
   border-radius: 4px;
+  background: white;
   /* thablets: */
+}
+@media screen and (max-width: 550px) {
+  .portfolio-tiles > div {
+    /* styles */
+  }
 }
 
 /*******************

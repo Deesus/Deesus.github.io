@@ -4,12 +4,6 @@
   margin:   0;
 }
 
-/* use in '.row' if NOT nested in fluid */
-.no-fluid {
-  margin-left:  0;
-  margin-right: 0;
-}
-
 /* use if nested in fluid and want to clear */
 .clear-fluid {
   margin-left:  -2rem;

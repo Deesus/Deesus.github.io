@@ -10,6 +10,7 @@
 
 $link-blue:   deepskyblue;
 $link-hover:  #0FA0CE;
+$latest-work: #dddddd;
 /* ========================================================================== */
 
 
@@ -66,28 +67,20 @@ section {
   @include box-shadow(inset 0 2px 4px 0 rgba(210, 210, 210, .5));
 }
 
-.portfolio-tiles {
-  li {
-    display: inline;
-    @include flex-direction(row);
-
-    @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.2));
-    width: 30%;
-    padding: 1rem;
-    background: white;
-    border-radius: 4px;
-
-    /* thablets: */
-    @media screen and (max-width: 550px) {
-      
-    }
+.portfolio-tiles > div {
+  @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.2));
+  padding:        1rem;
+  border-radius:  4px;
+  background:     white;
+  /* thablets: */
+  @media screen and (max-width: 550px) {
+    /* styles */
   }
 }
 
 /*******************
  About
  *******************/
-
 
 /**************
  Footer

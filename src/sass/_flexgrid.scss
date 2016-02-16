@@ -14,7 +14,7 @@
   padding-left:   2rem;
 }
 
-.row {
+.row, .row-no-fluid {
   @include display-flex;
   @include flex(0 1 auto);
   @include flex-direction(row);
@@ -25,6 +25,12 @@
   @include flex-wrap(wrap);
   margin-left:  -1rem;
   margin-right: -1rem;
+}
+
+/* use '.row-no-fluid' if NOT nested in container-fluid */
+.row-no-fluid {
+  margin-left:  0;
+  margin-right: 0;
 }
 
 /* columns: */
