@@ -387,9 +387,6 @@ section {
   -webkit-box-shadow: inset 0 2px 4px 0 rgba(210, 210, 210, 0.5);
   box-shadow: inset 0 2px 4px 0 rgba(210, 210, 210, 0.5);
 }
-#portfolio hr {
-  color: #dddddd;
-}
 
 .portfolio-tiles {
   width: 74%;
@@ -398,19 +395,35 @@ section {
   border-radius: 4px;
 }
 
-.portfolio-tiles > div {
+.portfolio-tiles > div, .portfolio-tiles > figure {
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  -webkit-transition: all 0.4s ease;
+  -webkit-transition-delay: 0s;
+  transition: all 0.4s ease 0s;
   padding: 1rem;
   border-radius: 4px;
   background: white;
-  /* thablets: */
+  font-weight: 200;
 }
-@media screen and (max-width: 550px) {
-  .portfolio-tiles > div {
-    /* styles */
-  }
+.portfolio-tiles > div:hover, .portfolio-tiles > figure:hover {
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+}
+.portfolio-tiles > div figcaption, .portfolio-tiles > figure figcaption {
+  margin: 1rem 1.5rem 0.5rem;
+}
+.portfolio-tiles > div h1, .portfolio-tiles > div h2, .portfolio-tiles > div h3, .portfolio-tiles > div h4, .portfolio-tiles > div h5, .portfolio-tiles > div h6, .portfolio-tiles > figure h1, .portfolio-tiles > figure h2, .portfolio-tiles > figure h3, .portfolio-tiles > figure h4, .portfolio-tiles > figure h5, .portfolio-tiles > figure h6 {
+  font-size: 1.7rem;
+  margin-bottom: 0.4rem;
+}
+.portfolio-tiles > div p, .portfolio-tiles > figure p {
+  margin: 0;
+  color: dimgray;
 }
 
 /*******************
