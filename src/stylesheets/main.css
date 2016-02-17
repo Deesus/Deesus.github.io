@@ -387,13 +387,23 @@ section {
 }
 
 .portfolio-tiles {
+  border: 1px red dotted;
   width: 74%;
-}
-.portfolio-tiles img {
-  border-radius: 4px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 .portfolio-tiles > div, .portfolio-tiles > figure {
+  margin: auto;
+  /* we want a max of three tiles in a row (they start to resize) */
+  max-width: calc(100%/3);
+  border: 1px deepskyblue dotted;
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -422,6 +432,9 @@ section {
 .portfolio-tiles > div p, .portfolio-tiles > figure p {
   margin: 0;
   color: dimgray;
+}
+.portfolio-tiles > div img, .portfolio-tiles > figure img {
+  border-radius: 4px;
 }
 
 /*******************
