@@ -37,9 +37,7 @@ a {
 a:hover {
   color: $link-hover; }
 
-/*******************
- Buttons
- *******************/
+/* Buttons: */
 button, .button, input[type='button'], input[type='submit'], input[type='reset'] {
 
 }
@@ -100,8 +98,8 @@ section {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-size:  1.7rem;
-    margin-bottom: 0.4rem;
+    font-size:      1.7rem;
+    margin-bottom:  0.4rem;
   }
 
   p {
