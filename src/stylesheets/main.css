@@ -386,24 +386,18 @@ section {
   box-shadow: inset 0 2px 4px 0 rgba(210, 210, 210, 0.5);
 }
 
-.portfolio-tiles {
-  border: 1px red dotted;
-  width: 74%;
+/* a container (or row) for portfolio bricks: */
+.portfolio-row {
   display: -webkit-flex;
   display: flex;
   -webkit-box-orient: horizontal;
   box-orient: horizontal;
   -webkit-justify-content: center;
   justify-content: center;
-  -webkit-align-items: center;
-  align-items: center;
+  margin-bottom: 1.8%;
 }
 
-.portfolio-tiles > div, .portfolio-tiles > figure {
-  margin: auto;
-  /* we want a max of three tiles in a row (they start to resize) */
-  max-width: calc(100%/3);
-  border: 1px deepskyblue dotted;
+.portfolio-row > figure {
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -412,28 +406,31 @@ section {
   -webkit-transition: all 0.4s ease;
   -webkit-transition-delay: 0s;
   transition: all 0.4s ease 0s;
+  margin: 0.9%;
   padding: 1rem;
   border-radius: 4px;
   background: white;
   font-weight: 200;
+  /* resize tile upon resizing window: */
+  max-width: calc(100%/3 - (2 * 1.2rem));
 }
-.portfolio-tiles > div:hover, .portfolio-tiles > figure:hover {
+.portfolio-row > figure:hover {
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
 }
-.portfolio-tiles > div figcaption, .portfolio-tiles > figure figcaption {
+.portfolio-row > figure figcaption {
   margin: 1rem 1.5rem 0.5rem;
 }
-.portfolio-tiles > div h1, .portfolio-tiles > div h2, .portfolio-tiles > div h3, .portfolio-tiles > div h4, .portfolio-tiles > div h5, .portfolio-tiles > div h6, .portfolio-tiles > figure h1, .portfolio-tiles > figure h2, .portfolio-tiles > figure h3, .portfolio-tiles > figure h4, .portfolio-tiles > figure h5, .portfolio-tiles > figure h6 {
+.portfolio-row > figure h1, .portfolio-row > figure h2, .portfolio-row > figure h3, .portfolio-row > figure h4, .portfolio-row > figure h5, .portfolio-row > figure h6 {
   font-size: 1.7rem;
   margin-bottom: 0.4rem;
 }
-.portfolio-tiles > div p, .portfolio-tiles > figure p {
+.portfolio-row > figure p {
   margin: 0;
   color: dimgray;
 }
-.portfolio-tiles > div img, .portfolio-tiles > figure img {
+.portfolio-row > figure img {
   border-radius: 4px;
 }
 

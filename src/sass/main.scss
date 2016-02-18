@@ -11,6 +11,8 @@
 $link-blue:     deepskyblue;
 $link-hover:    #0FA0CE;
 $portfolio-hr:  #dddddd;
+
+$margin-tiles:  0.9%;
 /* ========================================================================== */
 
 
@@ -72,27 +74,27 @@ section {
   @include box-shadow(inset 0 2px 4px 0 rgba(210, 210, 210, .5));
 }
 
-.portfolio-tiles {
-  border: 1px red dotted;
-  width: 74%;
+/* a container (or row) for portfolio bricks: */
+.portfolio-row {
   @include display-flex;
   @include flexbox((box-orient: horizontal));
-  @include justify-content(center);
-  @include align-items(center);
+  @include justify-content(center);             // we want items to be centered
+  margin-bottom: $margin-tiles * 2;
 }
 
-.portfolio-tiles > div, .portfolio-tiles > figure {
-  margin: auto;
-  /* we want a max of three tiles in a row (they start to resize) */
-  max-width: calc(100%/3);
-
-  border: 1px deepskyblue dotted;
+.portfolio-row > figure {
   @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.2));
   @include transition(all 0.4s ease 0s);
+  margin:         $margin-tiles;
   padding:        1rem;
   border-radius:  4px;
   background:     white;
   font-weight:    200;
+
+  /* resize tile upon resizing window: */
+  // we want a max of three tiles in a row -- therefore, "100%/3" (3 divs add up to 100% width of window):
+  // we also need to compensate for margins (1.2rem) on both sides -- therefore "2 * 1.2 rem":
+  max-width: calc(100%/3 - (2 * 1.2rem));
 
   &:hover {
     @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.4));
