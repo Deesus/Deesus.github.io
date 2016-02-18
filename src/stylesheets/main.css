@@ -414,10 +414,6 @@ header {
   height: 7.5rem;
   background: white;
   border-bottom: 1px solid black;
-  -moz-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
 }
 header nav {
   height: 100%;
@@ -428,6 +424,10 @@ header button {
 header img {
   max-height: 4rem;
   width: auto;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 /*******************
