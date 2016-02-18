@@ -17,14 +17,20 @@
 <body>
     <div id="body-wrapper">
         <!-- ================ HEADER ================ -->
-        <header>
-            <div class="logo">
-
-            </div>
-            <nav>
-
+        <header class="container-fluid">
+            <nav class="row align-items-center">
+                <div class="col-1"></div>
+                <div class="col-4 logo">
+                    <img src="public/img/placeholder_logo.png" alt="signature logo">
+                </div>
+                <div class="col-6 text-end">
+                    <button>about</button>
+                    <button>portfolio</button>
+                    <button>contact</button>
+                </div>
             </nav>
         </header>
+
         <!-- ================ MAIN ================ -->
         <main>
             <!-- ================ HOME ================ -->
@@ -182,6 +188,7 @@
             <div class="col-1"></div>
             <div class="col-4" data-footer="&copy; 2016 Dee Reddy">&copy; 2016 Dee Reddy</div>
             <div class="col-6 text-end">
+                <!-- TODO: replace `;nbsp` with padding/maring -->
                 <a href="mailto:deesus@yandex.com" target="_blank">
                     <i class="ion-ios-email-outline" style="font-size: 2.9rem;"></i>
                 </a>

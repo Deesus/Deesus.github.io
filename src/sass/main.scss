@@ -15,6 +15,7 @@ $footer-bg:     rgb(245, 245, 245);
 $gray:          rgb(100, 100, 100);
 
 $margin-tiles:  0.9%;
+$header-height: 7.5rem;
 /* ========================================================================== */
 
 
@@ -60,6 +61,30 @@ section {
   @include align-items(center);
 }
 
+/*******************
+ Header
+ *******************/
+header {
+  position:       fixed;
+  width:          100%;
+  height:         $header-height;
+  background:     white;
+  border-bottom:  1px solid black;
+  @include        transition(all 0.6s ease);
+
+  nav {
+    height: 100%;
+  }
+
+  button {
+    margin: 0 0.7rem;
+  }
+
+  img {
+    max-height: 4rem;
+    width:      auto;
+  }
+}
 
 /*******************
  Home

@@ -3,6 +3,10 @@
 
 
 #### TODO:
+- **Refactor:**
++ [ ] Adjust height of sections to compensate for fixed header (e.g. `height: 100vh - $header-height`)
++ [ ] Header is kind of large -- perhaps reduce height?
+
 - **Main**:
 + [ ] Solve Holy Grail Layout
 + [ ] Solve: what to do when text overflows flexbox section? (c.f when resize browser)
