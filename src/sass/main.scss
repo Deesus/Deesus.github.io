@@ -11,6 +11,8 @@
 $link-blue:     deepskyblue;
 $link-hover:    #0FA0CE;
 $portfolio-hr:  #dddddd;
+$footer-bg:     rgb(245, 245, 245);
+$gray:          rgb(100, 100, 100);
 
 $margin-tiles:  0.9%;
 /* ========================================================================== */
@@ -139,7 +141,25 @@ body {
 }
 
 footer {
-  background: #c0c0c0;
+  @include box-shadow(inset 0 2px 4px 0 rgba(210, 210, 210, .5));
+  min-height: 9rem;
+  background: $footer-bg;
+  color:      $gray;
+
+  .row {
+    min-height: 100%;
+  }
+  a {
+    color:$gray;
+    @include transition(color 0.4s ease);
+    &:hover {
+      color: black;
+    }
+  }
+
+  i {
+    font-size: 2.6rem;
+  }
 }
 
 /*******************

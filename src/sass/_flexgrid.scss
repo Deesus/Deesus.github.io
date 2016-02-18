@@ -6,15 +6,13 @@
  **************/
 .container-fluid {
   box-sizing: border-box;
-  // make fluid:
-  margin-left:  auto;
-  margin-right: auto;
   // needed to compensate for gutters when the rows wrap:
   padding-right:  2rem;
   padding-left:   2rem;
 }
 
 .row, .row-no-fluid {
+  box-sizing: border-box;
   @include display-flex;
   @include flex(0 1 auto);
   @include flex-direction(row);
@@ -91,3 +89,15 @@
 }
 
 // TODO: add flex `align-self` property?
+
+/* creates flexbox container horizontal direction */
+.flex-row {
+  @include display-flex;
+  @include flex-direction(row);
+}
+
+/* creates flexbox container vertical direction */
+.flex-column {
+  @include display-flex;
+  @include flex-direction(column);
+}
