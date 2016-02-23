@@ -4,8 +4,13 @@
 
 #### TODO:
 - **Refactor:**
++ [ ] Add phablet menu (resized menu)
++ [ ] Internal links (#) need to be offset by the header height
++ [ ] jQuery portfolio thumbnails -- c.f. Twitter UI (white bg, minimalist, tint background, rounded edges)
 + [ ] Adjust height of sections to compensate for fixed header (e.g. `height: 100vh - $header-height`)
 + [ ] Header is kind of large -- perhaps reduce height?
++ [ ] Replace placeholder images (check filename)
++ [ ] Add graph (D3?) that highlights proficiencies
 
 - **Main**:
 + [ ] Solve Holy Grail Layout

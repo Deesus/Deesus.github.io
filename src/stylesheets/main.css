@@ -411,9 +411,9 @@ section {
 header {
   position: fixed;
   width: 100%;
-  height: 7.5rem;
+  height: 4.5rem;
   background: white;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid darkgray;
 }
 header nav {
   height: 100%;
@@ -476,9 +476,9 @@ header img {
   max-width: calc(100%/3 - (2 * 1.2rem));
 }
 .portfolio-row > figure:hover {
-  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
 }
 .portfolio-row > figure figcaption {
   margin: 1rem 1.5rem 0.5rem;
@@ -524,7 +524,7 @@ footer {
   background: whitesmoke;
   color: darkgray;
 }
-footer .row {
+footer .container-row {
   min-height: 100%;
 }
 footer a {

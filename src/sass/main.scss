@@ -15,7 +15,7 @@ $footer-bg:     rgb(245, 245, 245);
 $gray:          rgb(100, 100, 100);
 
 $margin-tiles:      0.9%;
-$header-height:     7.5rem;
+$header-height:     4.5rem;
 $common-transition: all 0.5s ease;
 /* ========================================================================== */
 
@@ -83,7 +83,7 @@ header {
   width:          100%;
   height:         $header-height;
   background:     white;
-  border-bottom:  1px solid black;
+  border-bottom:  1px solid darkgray;
 
   nav {
     height: 100%;
@@ -138,7 +138,7 @@ header {
   max-width: calc(100%/3 - (2 * 1.2rem));
 
   &:hover {
-    @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.4));
+    @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.5));
   }
 
   figcaption {
@@ -185,7 +185,7 @@ footer {
   background: $footer-bg;
   color:      darkgray;
 
-  .row {
+  .container-row {
     min-height: 100%;
   }
   a {
