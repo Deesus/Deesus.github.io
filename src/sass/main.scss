@@ -10,7 +10,9 @@
 
 $link-blue:     deepskyblue;
 $link-hover:    #0FA0CE;
+$light-sky:     #4fc8de;
 $portfolio-hr:  #dddddd;
+$text-black:    #222;
 $footer-bg:     rgb(245, 245, 245);
 $gray:          rgb(100, 100, 100);
 
@@ -61,6 +63,16 @@ button, .button, input[type='button'], input[type='submit'], input[type='reset']
   }
 }
 
+/* change selection */
+// n.b. selector cannot be combined (CSS gotcha)
+::selection {
+  background: $light-sky;
+}
+
+::-moz-selection {
+  background: $light-sky;
+}
+
 /* ==========================================================================
    Sections
    ========================================================================== */
@@ -70,7 +82,7 @@ section {
 }
 
 .title {
-  padding: 5rem 0 5rem 0;
+  padding: 9.2rem 0 5rem 0;
   @include flex-wrap(wrap);
   @include align-items(center);
 }
@@ -172,7 +184,7 @@ body {
   @include display-flex;
   @include flex-direction(column);
   -webkit-box-orient: vertical;
-  min-height: 100vh;
+  min-height:         100vh;
 }
 
 #body-wrapper {
@@ -188,16 +200,21 @@ footer {
   .container-row {
     min-height: 100%;
   }
-  a {
+
+  a, a i {
     @include transition(color 0.4s ease);
     color: darkgray;
     &:hover {
-      color: $gray;
+      color:        $gray;
+      border-color: $gray;
     }
   }
 
   i {
-    font-size: 2.6rem;
+    font-size:      2.6rem;
+    padding:        0 1rem 0 1rem;
+    border:         1px solid darkgray;
+    border-radius:  50%;
   }
 }
 

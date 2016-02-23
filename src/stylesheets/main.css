@@ -237,8 +237,8 @@ body {
   /* using `em` instead of `rem` in body b/c bug in chrome (use `rem` in all other areas) */
   font-size: 1.5em;
   font-family: "OpenSans", Helvetica, Arial, sans-serif;
-  color: #222;
-  /* NOT pure black */
+  color: #54585E;
+  line-height: 3.1rem;
 }
 
 a {
@@ -389,6 +389,15 @@ button:hover, button:focus, .button:hover, .button:focus, input[type='button']:h
   color: black;
 }
 
+/* change selection */
+::selection {
+  background: #4fc8de;
+}
+
+::-moz-selection {
+  background: #4fc8de;
+}
+
 /* ==========================================================================
    Sections
    ========================================================================== */
@@ -398,7 +407,7 @@ section {
 }
 
 .title {
-  padding: 5rem 0 5rem 0;
+  padding: 9.2rem 0 5rem 0;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-align-items: center;
@@ -527,18 +536,22 @@ footer {
 footer .container-row {
   min-height: 100%;
 }
-footer a {
+footer a, footer a i {
   -moz-transition: color 0.4s ease;
   -o-transition: color 0.4s ease;
   -webkit-transition: color 0.4s ease;
   transition: color 0.4s ease;
   color: darkgray;
 }
-footer a:hover {
+footer a:hover, footer a i:hover {
   color: #646464;
+  border-color: #646464;
 }
 footer i {
   font-size: 2.6rem;
+  padding: 0 1rem 0 1rem;
+  border: 1px solid darkgray;
+  border-radius: 50%;
 }
 
 /*******************
