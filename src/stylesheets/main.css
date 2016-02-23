@@ -389,7 +389,7 @@ button:hover, button:focus, .button:hover, .button:focus, input[type='button']:h
   color: black;
 }
 
-/* change selection */
+/* change selection color: */
 ::selection {
   background: #4fc8de;
 }
@@ -444,6 +444,10 @@ header img {
  *******************/
 #home {
   order: 1;
+}
+
+.typography {
+  background: url("../../public/img/bg_texture_2.png") no-repeat center;
 }
 
 /*******************

@@ -63,7 +63,7 @@ button, .button, input[type='button'], input[type='submit'], input[type='reset']
   }
 }
 
-/* change selection */
+/* change selection color: */
 // n.b. selector cannot be combined (CSS gotcha)
 ::selection {
   background: $light-sky;
@@ -117,6 +117,10 @@ header {
  *******************/
 #home {
   order: 1;
+}
+
+.typography {
+  background: url('../../public/img/bg_texture_2.png') no-repeat center;
 }
 
 /*******************

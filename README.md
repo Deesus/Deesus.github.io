@@ -4,6 +4,7 @@
 
 #### TODO:
 - **Refactor:**
++ [ ] Remove header?
 + [ ] Add phablet menu (resized menu)
 + [ ] Internal links (#) need to be offset by the header height
 + [ ] jQuery portfolio thumbnails -- c.f. Twitter UI (white bg, minimalist, tint background, rounded edges)
