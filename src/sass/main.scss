@@ -8,13 +8,15 @@
         "utility";
         // _media.scss (at end)
 
+// TODO: be sure to list ALL colors used in stylesheet:
 $link-blue:     deepskyblue;
 $link-hover:    #0FA0CE;
 $light-sky:     #4fc8de;
-$portfolio-hr:  #dddddd;
-$text-black:    #222;
+$blue-white:    #cfdce4;
 $footer-bg:     rgb(245, 245, 245);
+$portfolio-hr:  #dddddd;
 $gray:          rgb(100, 100, 100);
+$text-black:    #222;
 
 $margin-tiles:      0.9%;
 $header-height:     4.5rem;
@@ -116,6 +118,7 @@ header {
  Home
  *******************/
 #home {
+  @include background-image(radial_gradient(#ffffff 49%, #cfdce4 100%));
   order: 1;
 }
 
@@ -219,6 +222,28 @@ footer {
     padding:        0 1rem 0 1rem;
     border:         1px solid darkgray;
     border-radius:  50%;
+  }
+}
+
+/*******************
+ Misc
+ *******************/
+
+/* creates an svg triangle that overlays on page (i.e. negative margin) */
+.triangle-center {
+  // change triangle variables as necessary:
+  $triangle-base:     50px;
+  $triangle-height:   26px;
+  $triangle-fill:     red;
+
+  text-align:     center;
+  height:         $triangle-height;
+  margin-bottom:  -($triangle-height);
+
+  svg {
+    width:  $triangle-base;
+    height: 26$triangle-height;
+    fill:   $triangle-fill;
   }
 }
 
