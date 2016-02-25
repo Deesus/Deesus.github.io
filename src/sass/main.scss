@@ -27,8 +27,6 @@ $common-transition: all 0.5s ease;
 /* ==========================================================================
    Styles
    ========================================================================== */
-// TODO: set defaults for link color, font-family, header font, sizes, etc.
-
 img {
   /* image automatically resizes to max-width of the boundary: */
   max-width:  100%;
@@ -37,6 +35,8 @@ img {
   // removes the extra space on bottom of a div that contains an image:
   display:    block;
 }
+
+
 
 ul {
   list-style: none;
@@ -90,41 +90,14 @@ section {
 }
 
 /*******************
- Header
- *******************/
-header {
-  position:       fixed;
-  width:          100%;
-  height:         $header-height;
-  background:     white;
-  border-bottom:  1px solid darkgray;
-
-  nav {
-    height: 100%;
-  }
-
-  button {
-    margin: 0 0.7rem;
-  }
-
-  img {
-    max-height: 4rem;
-    width:      auto;
-    @include    transition($common-transition);
-  }
-}
-
-/*******************
  Home
  *******************/
 #home {
   @include background-image(radial_gradient(#ffffff 49%, #cfdce4 100%));
-  order: 1;
+  order:    1;
+  overflow: hidden;
 }
 
-.typography {
-  background: url('../../public/img/bg_texture_2.png') no-repeat center;
-}
 
 /*******************
  Portfolio
