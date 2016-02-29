@@ -17,6 +17,17 @@ html {
   box-sizing: inherit;
 }
 
+img {
+  /* image automatically resizes to max-width of the boundary: */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
 /**************
  Grid
  **************/
@@ -352,17 +363,6 @@ h6 {
 /* ==========================================================================
    Styles
    ========================================================================== */
-img {
-  /* image automatically resizes to max-width of the boundary: */
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
 a {
   color: deepskyblue;
 }
@@ -418,11 +418,6 @@ section {
  Home
  *******************/
 #home {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI0OSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjZmRjZTQiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
-  background-size: 100%;
-  background-image: -moz-radial-gradient(#ffffff 49%, #cfdce4 100%);
-  background-image: -webkit-radial-gradient(#ffffff 49%, #cfdce4 100%);
-  background-image: radial-gradient(#ffffff 49%, #cfdce4 100%);
   order: 1;
   overflow: hidden;
 }
@@ -535,9 +530,9 @@ footer i {
   border-radius: 50%;
 }
 
-/*******************
- Misc
- *******************/
+/* ==========================================================================
+   Misc
+   ========================================================================== */
 /* creates an svg triangle that overlays on page (i.e. negative margin) */
 .triangle-center {
   text-align: center;
