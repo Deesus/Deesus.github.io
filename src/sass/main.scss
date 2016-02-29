@@ -55,10 +55,12 @@ button, .button, input[type='button'], input[type='submit'], input[type='reset']
 // n.b. selector cannot be combined (CSS gotcha)
 ::selection {
   background: $light-sky;
+  color:      ghostwhite;
 }
 
 ::-moz-selection {
   background: $light-sky;
+  color:      ghostwhite;
 }
 
 /* ==========================================================================
@@ -66,7 +68,7 @@ button, .button, input[type='button'], input[type='submit'], input[type='reset']
    ========================================================================== */
 /* all sections (except footer, header): */
 section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .title {
@@ -81,6 +83,26 @@ section {
 #home {
   order:    1;
   overflow: hidden;
+}
+
+/*******************
+ About
+ *******************/
+.about-hr {
+  width:      70%;
+  height:     2px;
+  background: #e5ded6;    // needed when hr has height > 1px
+  color:      #e5ded6;
+  border:     none;
+}
+
+#about-list {
+  & > div {
+    margin-bottom: 6rem;
+  }
+  figure {
+    padding-right: 5rem;
+  }
 }
 
 /*******************
@@ -135,10 +157,6 @@ section {
     border-radius: 4px;
   }
 }
-
-/*******************
- About
- *******************/
 
 /**************
  Footer

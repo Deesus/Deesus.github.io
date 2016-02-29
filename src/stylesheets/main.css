@@ -62,7 +62,7 @@ ul {
 }
 
 /* columns: */
-[class^='col-'] {
+[class^='col-'], .column {
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
   -moz-box-sizing: border-box;
@@ -341,7 +341,7 @@ h6 {
   min-height: 100%;
 }
 
-.responsive, .margin-center {
+.auto-margin, .margin-center {
   margin-left: auto;
   margin-right: auto;
 }
@@ -392,10 +392,12 @@ button:hover, button:focus, .button:hover, .button:focus, input[type='button']:h
 /* change selection color: */
 ::selection {
   background: #4fc8de;
+  color: ghostwhite;
 }
 
 ::-moz-selection {
   background: #4fc8de;
+  color: ghostwhite;
 }
 
 /* ==========================================================================
@@ -403,7 +405,7 @@ button:hover, button:focus, .button:hover, .button:focus, input[type='button']:h
    ========================================================================== */
 /* all sections (except footer, header): */
 section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .title {
@@ -420,6 +422,24 @@ section {
 #home {
   order: 1;
   overflow: hidden;
+}
+
+/*******************
+ About
+ *******************/
+.about-hr {
+  width: 70%;
+  height: 2px;
+  background: #e5ded6;
+  color: #e5ded6;
+  border: none;
+}
+
+#about-list > div {
+  margin-bottom: 6rem;
+}
+#about-list figure {
+  padding-right: 5rem;
 }
 
 /*******************
@@ -480,9 +500,6 @@ section {
   border-radius: 4px;
 }
 
-/*******************
- About
- *******************/
 /**************
  Footer
  **************/
