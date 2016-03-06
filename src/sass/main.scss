@@ -1,6 +1,6 @@
-/*
-  Author: Dee Reddy (deesus@yandex.com)
-  */
+/* ==========================================================================
+    Author: Dee Reddy (deesus@yandex.com)
+   ========================================================================== */
 
 @import "resets",
         "flexgrid",
@@ -69,7 +69,7 @@ button, .button, input[type='button'], input[type='submit'], input[type='reset']
    ========================================================================== */
 /* all sections (except footer, header): */
 section {
-  min-height: 100vh;
+  min-height: 25vh;
 }
 
 .title {
@@ -108,9 +108,9 @@ header {
  Home
  *******************/
 #home {
-  order:    1;
-  overflow: hidden;
-  height:   100%;
+  order:      1;
+  overflow:   hidden;
+  height:     calc(80vh - #{$header-height});
 }
 
 /*******************
@@ -244,7 +244,7 @@ footer {
 
   svg {
     width:  $triangle-base;
-    height: 26$triangle-height;
+    height: $triangle-height;
     fill:   $triangle-fill;
   }
 }
