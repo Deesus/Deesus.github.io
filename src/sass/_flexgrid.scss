@@ -43,7 +43,7 @@
 @for $i from 1 through 12 {
   .col-#{$i} {
     @include flex-basis       ((100%/12) * $i);
-    -ms-flex-preferred-size:  ((100% / 12) * $i);    // `-ms-flex-preferred-size` is used for IE10 support
+    -ms-flex-preferred-size:  ((100%/12) * $i);    // `-ms-flex-preferred-size` is used for IE10 support
     max-width:                ((100%/12) * $i);
   }
 }

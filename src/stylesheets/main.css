@@ -17,7 +17,7 @@ html {
   box-sizing: inherit;
 }
 
-img {
+img, figure {
   /* image automatically resizes to max-width of the boundary: */
   max-width: 100%;
   height: auto;
@@ -326,7 +326,7 @@ h6 {
   }
 }
 /* removes both padding and margins */
-.no-pad, .no-padding {
+.no-gutter, .no-pad-margin {
   padding: 0;
   margin: 0;
 }
@@ -335,10 +335,6 @@ h6 {
 .clear-fluid {
   margin-left: -2rem;
   margin-right: -2rem;
-}
-
-.full-height {
-  height: 100%;
 }
 
 .auto-margin, .margin-center {
@@ -357,6 +353,10 @@ h6 {
 
 .text-end {
   text-align: end;
+}
+
+.full-height {
+  height: 100%;
 }
 
 /* ========================================================================== */
@@ -463,11 +463,21 @@ header img {
   border: none;
 }
 
-#about-list > div {
+#about-list .about-li {
   margin-bottom: 6rem;
 }
 #about-list figure {
   padding-right: 5rem;
+}
+#about-list p {
+  margin-bottom: 2rem;
+}
+#about-list i {
+  font-size: 3rem;
+  margin-left: 2.2rem;
+}
+#about-list i:first-of-type {
+  margin-left: 0;
 }
 
 /*******************
@@ -526,6 +536,13 @@ header img {
 }
 .portfolio-row > figure img {
   border-radius: 4px;
+}
+
+/*******************
+ Contact
+ *******************/
+#contact {
+  background-color: #fcfaf7;
 }
 
 /**************

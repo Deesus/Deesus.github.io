@@ -15,8 +15,12 @@ $light-sky:     #4fc8de;
 $blue-white:    #cfdce4;
 $footer-bg:     rgb(245, 245, 245);
 $portfolio-hr:  #dddddd;
-$gray:          rgb(100, 100, 100);
-$text-black:    #222;
+$gray:          rgba(100, 100, 100, 1);
+$gray-invis:    rgba(100, 100, 100, 0);
+$text-black:    rgba(34, 34, 34, 1);    // same as #222
+$txt-blk-invis: rgba(34, 34, 34, 0);
+$sepia:         #e4dcd2;
+$light-sepia:   #fcfaf7;
 
 $margin-tiles:      0.9%;
 $header-height:     5rem;
@@ -116,20 +120,38 @@ header {
 /*******************
  About
  *******************/
+
+#about {
+
+}
+
 .about-hr {
   width:      100%;
   height:     1px;
-  background: #e4dcd2;    // needed when hr has height > 1px
-  color:      #e4dcd2;
+  background: $sepia;    // needed when hr has height > 1px
+  color:      $sepia;
   border:     none;
 }
 
 #about-list {
-  & > div {
+  .about-li {
     margin-bottom: 6rem;
   }
   figure {
     padding-right: 5rem;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+
+  // TODO: adjust line height of icons vs. text
+  // TODO: change to circle icons (c.f. footer icons)?
+  i {
+    font-size:    3rem;
+    margin-left:  2.2rem;
+    &:first-of-type {
+      margin-left: 0;
+    }
   }
 }
 
@@ -184,6 +206,13 @@ header {
   img {
     border-radius: 4px;
   }
+}
+
+/*******************
+ Contact
+ *******************/
+#contact {
+  background-color: $light-sepia;
 }
 
 /**************

@@ -1,5 +1,5 @@
 /* removes both padding and margins */
-.no-pad, .no-padding {
+.no-gutter, .no-pad-margin {
   padding:  0;
   margin:   0;
 }
@@ -8,10 +8,6 @@
 .clear-fluid {
   margin-left:  -2rem;
   margin-right: -2rem;
-}
-
-.full-height {
-  height: 100%;
 }
 
 .auto-margin, .margin-center {
@@ -32,6 +28,9 @@
   text-align: end;
 }
 
+.full-height {
+  height: 100%;
+}
 
 @mixin div-line() {
 
