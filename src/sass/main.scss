@@ -169,21 +169,25 @@ header {
   @include flexbox((box-orient: horizontal));
   @include justify-content(center);             // we want items to be centered
   margin-bottom: $margin-tiles * 2;
+
+  // N.b. the anchor acts as container:
+  a {
+    margin: $margin-tiles;
+    /* resize tile upon resizing window: */
+    // we want a max of three tiles in a row -- therefore, "100%/3" (3 divs add up to 100% width of window):
+    // we also need to compensate for margins (1.2rem) on both sides -- therefore "2 * 1.2 rem":
+    max-width: calc(100%/3 - (2 * 1.2rem));
+  }
 }
 
-.portfolio-row > figure {
+.portfolio-row figure {
   @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.2));
   @include transition(all 0.4s ease 0s);
-  margin:         $margin-tiles;
   padding:        1rem;
   border-radius:  4px;
   background:     white;
   font-weight:    200;
-
-  /* resize tile upon resizing window: */
-  // we want a max of three tiles in a row -- therefore, "100%/3" (3 divs add up to 100% width of window):
-  // we also need to compensate for margins (1.2rem) on both sides -- therefore "2 * 1.2 rem":
-  max-width: calc(100%/3 - (2 * 1.2rem));
+  height:         100%;         // fill up the anchor container
 
   &:hover {
     @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.5));

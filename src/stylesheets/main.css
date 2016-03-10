@@ -500,8 +500,13 @@ header img {
   justify-content: center;
   margin-bottom: 1.8%;
 }
+.portfolio-row a {
+  margin: 0.9%;
+  /* resize tile upon resizing window: */
+  max-width: calc(100%/3 - (2 * 1.2rem));
+}
 
-.portfolio-row > figure {
+.portfolio-row figure {
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -510,31 +515,29 @@ header img {
   -webkit-transition: all 0.4s ease;
   -webkit-transition-delay: 0s;
   transition: all 0.4s ease 0s;
-  margin: 0.9%;
   padding: 1rem;
   border-radius: 4px;
   background: white;
   font-weight: 200;
-  /* resize tile upon resizing window: */
-  max-width: calc(100%/3 - (2 * 1.2rem));
+  height: 100%;
 }
-.portfolio-row > figure:hover {
+.portfolio-row figure:hover {
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
 }
-.portfolio-row > figure figcaption {
+.portfolio-row figure figcaption {
   margin: 1rem 1.5rem 0.5rem;
 }
-.portfolio-row > figure h1, .portfolio-row > figure h2, .portfolio-row > figure h3, .portfolio-row > figure h4, .portfolio-row > figure h5, .portfolio-row > figure h6 {
+.portfolio-row figure h1, .portfolio-row figure h2, .portfolio-row figure h3, .portfolio-row figure h4, .portfolio-row figure h5, .portfolio-row figure h6 {
   font-size: 1.7rem;
   margin-bottom: 0.4rem;
 }
-.portfolio-row > figure p {
+.portfolio-row figure p {
   margin: 0;
   color: dimgray;
 }
-.portfolio-row > figure img {
+.portfolio-row figure img {
   border-radius: 4px;
 }
 
