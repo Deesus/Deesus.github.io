@@ -178,37 +178,37 @@ header {
     // we also need to compensate for margins (1.2rem) on both sides -- therefore "2 * 1.2 rem":
     max-width: calc(100%/3 - (2 * 1.2rem));
   }
-}
 
-.portfolio-row figure {
-  @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.2));
-  @include transition(all 0.4s ease 0s);
-  padding:        1rem;
-  border-radius:  4px;
-  background:     white;
-  font-weight:    200;
-  height:         100%;         // fill up the anchor container
+  figure {
+    @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.2));
+    @include transition(all 0.4s ease 0s);
+    padding:        1rem;
+    border-radius:  4px;
+    background:     white;
+    font-weight:    200;
+    height:         100%;         // fill up the anchor container
 
-  &:hover {
-    @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.5));
-  }
+    &:hover {
+      @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.5));
+    }
 
-  figcaption {
-    margin: 1rem 1.5rem 0.5rem;
-  }
+    figcaption {
+      margin: 1rem 1.5rem 0.5rem;
+    }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-size:      1.7rem;
-    margin-bottom:  0.4rem;
-  }
+    h1, h2, h3, h4, h5, h6 {
+      font-size:      1.7rem;
+      margin-bottom:  0.4rem;
+    }
 
-  p {
-    margin: 0;
-    color:  dimgray;
-  }
+    p {
+      margin: 0;
+      color:  dimgray;
+    }
 
-  img {
-    border-radius: 4px;
+    img {
+      border-radius: 4px;
+    }
   }
 }
 
