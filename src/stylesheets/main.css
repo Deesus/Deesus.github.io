@@ -359,7 +359,6 @@ h6 {
   height: 100%;
 }
 
-/* ========================================================================== */
 /* ==========================================================================
    Styles
    ========================================================================== */
@@ -472,11 +471,18 @@ header img {
 #about-list p {
   margin-bottom: 2rem;
 }
-#about-list i {
+#about-list .skill-icons {
+  display: -webkit-flex;
+  display: flex;
+  color: #196bac;
+}
+#about-list .skill-icons i {
+  color: #495164;
   font-size: 3rem;
+  margin-right: 0.8rem;
   margin-left: 2.2rem;
 }
-#about-list i:first-of-type {
+#about-list .skill-icons i:first-of-type {
   margin-left: 0;
 }
 
@@ -597,18 +603,6 @@ footer i {
 /* ==========================================================================
    Misc
    ========================================================================== */
-/* creates an svg triangle that overlays on page (i.e. negative margin) */
-.triangle-center {
-  text-align: center;
-  height: 26px;
-  margin-bottom: -26px;
-}
-.triangle-center svg {
-  width: 50px;
-  height: 26px;
-  fill: red;
-}
-
 .div-line {
   width: 100%;
   height: 0;

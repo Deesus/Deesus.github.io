@@ -9,12 +9,15 @@
         // _media.scss (at end)
 
 // TODO: be sure to list ALL colors used in stylesheet:
+$drk-blue:      #495164;
+$alt-blue:      #196bac;                // or try alt: #259fff
 $link-blue:     deepskyblue;
 $link-hover:    #0FA0CE;
 $light-sky:     #4fc8de;
 $blue-white:    #cfdce4;
 $footer-bg:     rgb(245, 245, 245);
 $portfolio-hr:  #dddddd;
+$alt-gray:      #9f9f9f;
 $gray:          rgba(100, 100, 100, 1);
 $gray-invis:    rgba(100, 100, 100, 0);
 $text-black:    rgba(34, 34, 34, 1);    // same as #222
@@ -25,7 +28,7 @@ $light-sepia:   #fcfaf7;
 $margin-tiles:      0.9%;
 $header-height:     5rem;
 $common-transition: all 0.5s ease;
-/* ========================================================================== */
+/////////////////////////////////////////////////////////////////////////////////
 
 
 /* ==========================================================================
@@ -134,6 +137,7 @@ header {
 }
 
 #about-list {
+
   .about-li {
     margin-bottom: 6rem;
   }
@@ -144,13 +148,19 @@ header {
     margin-bottom: 2rem;
   }
 
-  // TODO: adjust line height of icons vs. text
-  // TODO: change to circle icons (c.f. footer icons)?
-  i {
-    font-size:    3rem;
-    margin-left:  2.2rem;
-    &:first-of-type {
-      margin-left: 0;
+  .skill-icons {
+    @include display-flex;    // centers items inside
+    color: $alt-blue;
+
+    // TODO: change to circle icons (c.f. footer icons)?
+    i {
+      color:        $drk-blue;
+      font-size:    3rem;
+      margin-right: 0.8rem;
+      margin-left:  2.2rem;
+      &:first-of-type {
+        margin-left: 0;
+      }
     }
   }
 }
@@ -264,23 +274,6 @@ footer {
 /* ==========================================================================
    Misc
    ========================================================================== */
-/* creates an svg triangle that overlays on page (i.e. negative margin) */
-.triangle-center {
-  // change triangle variables as necessary:
-  $triangle-base:     50px;
-  $triangle-height:   26px;
-  $triangle-fill:     red;
-
-  text-align:     center;
-  height:         $triangle-height;
-  margin-bottom:  -($triangle-height);
-
-  svg {
-    width:  $triangle-base;
-    height: $triangle-height;
-    fill:   $triangle-fill;
-  }
-}
 
 // TODO: use svg instead:
 .div-line {
