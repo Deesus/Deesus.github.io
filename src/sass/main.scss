@@ -8,26 +8,31 @@
         "utility";
         // _media.scss (at end)
 
-// TODO: be sure to list ALL colors used in stylesheet:
+// TODO: simplify number of colors used:
+
 $drk-blue:      #495164;
-$alt-blue:      #196bac;                // or try alt: #259fff
+$alt-blue:      #196bac;    // or try #259fff
 $link-blue:     deepskyblue;
 $link-hover:    #0FA0CE;
-$light-sky:     #4fc8de;
+$selection:     #4fc8de;
 $blue-white:    #cfdce4;
+$portfolio-bg:  rgba(250, 250, 250, 1);
 $footer-bg:     rgb(245, 245, 245);
 $portfolio-hr:  #dddddd;
+$darkgray:      darkgray;
 $alt-gray:      #9f9f9f;
+$blue-gray:     #687283;
+$shadow-gray:   rgba(210, 210, 210, .5);
 $gray:          rgba(100, 100, 100, 1);
 $gray-invis:    rgba(100, 100, 100, 0);
 $text-black:    rgba(34, 34, 34, 1);    // same as #222
 $txt-blk-invis: rgba(34, 34, 34, 0);
-$sepia:         #e4dcd2;
-$light-sepia:   #fcfaf7;
-$brown:         #998e82;
-$brown-text:    #665f57;
+$sepia:         #e4dcd2;  // unused
+$light-sepia:   #fcfaf7;  // unused
+$brown:         #998e82;  // unused
+$brown-text:    #665f57;  // unused
 
-$margin-tiles:      0.9%;
+$section-padding:   0.9%;
 $header-height:     5rem;
 $common-transition: all 0.5s ease;
 /////////////////////////////////////////////////////////////////////////////////
@@ -63,12 +68,12 @@ button, .button, input[type='button'], input[type='submit'], input[type='reset']
 /* change selection color: */
 // n.b. selector cannot be combined (CSS gotcha)
 ::selection {
-  background: $light-sky;
+  background: $selection;
   color:      ghostwhite;
 }
 
 ::-moz-selection {
-  background: $light-sky;
+  background: $selection;
   color:      ghostwhite;
 }
 
@@ -78,6 +83,7 @@ button, .button, input[type='button'], input[type='submit'], input[type='reset']
 /* all sections (except footer, header): */
 section {
   min-height: 25vh;
+  padding-bottom: $section-padding;
 }
 
 .title {
@@ -94,11 +100,10 @@ header {
   width:          100%;
   height:         $header-height;
   background:     white;
-  border-bottom:  1px solid darkgray;
 
   .logo {
     font-family:  'Oldenburg', serif;
-    color:        $brown-text;
+    color:        $drk-blue;
     font-size:    2rem;
   }
 
@@ -121,19 +126,33 @@ header {
     @include    transition($common-transition);
   }
 }
+
 /*******************
  Home
  *******************/
 #home {
-  order:      1;
-  overflow:   hidden;
-  height:     calc(100vh - #{$header-height} - 1px);    // compensate for `header` and `hr`
+  @include display-flex;
+  @include flex-direction(column);
+
+  * {
+    border: 1px dodgerblue dotted;
+  }
+  order:          1;
+  padding-bottom: 0;
+  overflow:       hidden;
+  height:         calc(100vh - #{$header-height} - 1px);    // compensate for `header` and `hr`
+}
+
+.test {
+  @include display-flex;
+  @include flex-direction(column);
+  @include flex(1);
+  @include justify-content(flex-end);
 }
 
 /*******************
  About
  *******************/
-
 .about-hr {
   width:      100%;
   height:     1px;
@@ -175,8 +194,8 @@ header {
  Portfolio
  *******************/
 #portfolio {
-  background: rgba(250, 250, 250, 1);
-  @include    box-shadow(inset 0 2px 4px 0 rgba(210, 210, 210, .5));
+  background: $portfolio-bg;
+  @include    box-shadow(inset 0 2px 4px 0 $shadow-gray);
 }
 
 /* a container (or row) for portfolio bricks: */
@@ -184,11 +203,11 @@ header {
   @include        display-flex;
   @include        flexbox((box-orient: horizontal));
   @include        justify-content(center);             // we want items to be centered
-  margin-bottom:  $margin-tiles * 2;
+  margin-bottom:  $section-padding * 2;
 
   // N.b. the anchor acts as container:
   a {
-    margin:     $margin-tiles;
+    margin:     $section-padding;
     /* resize tile upon resizing window: */
     // we want a max of three tiles in a row -- therefore, "100%/3" (3 divs add up to 100% width of window):
     // we also need to compensate for margins (1.2rem) on both sides -- therefore "2 * 1.2 rem":
@@ -228,13 +247,6 @@ header {
   }
 }
 
-/*******************
- Contact
- *******************/
-#contact {
-  background-color: $light-sepia;
-}
-
 /**************
  Footer
  **************/
@@ -251,28 +263,28 @@ body {
 }
 
 footer {
-  @include    box-shadow(inset 0 2px 4px 0 rgba(210, 210, 210, .5));
+  @include    box-shadow(inset 0 2px 4px 0 $shadow-gray);
   min-height: 8.5rem;
   background: $footer-bg;
-  color:      darkgray;
+  color:      $darkgray;
 
   .container-row {
     min-height: 100%;
   }
 
-  a, a i {
+  a, a > i {
     @include  transition(color 0.4s ease);
-    color:    darkgray;
+    color:    $darkgray;
     &:hover {
       color:        $gray;
       border-color: $gray;
     }
   }
 
-  i {
+  a > i {
     font-size:      2.6rem;
     padding:        0 1rem 0 1rem;
-    border:         1px solid darkgray;
+    border:         1px solid $darkgray;
     border-radius:  50%;
   }
 }

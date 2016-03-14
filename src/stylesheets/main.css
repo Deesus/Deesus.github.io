@@ -160,31 +160,47 @@ ul {
 }
 
 /**************
- Align Flex Items (i.e. flex utilities):
+ Flex Container properties:
  **************/
-/* main axis: */
-.justify-start {
+/* creates flexbox container horizontal direction */
+.flex-row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+/* creates flexbox container vertical direction */
+.flex-column {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+/* main axis properties: */
+.justify-start, .justify-content-start {
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
-.justify-end {
+.justify-end, .justify-content-end {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-.justify-center {
+.justify-center, .justify-content-center {
   -webkit-justify-content: center;
   justify-content: center;
 }
-.justify-space-between {
+.justify-space-between, .justify-content-space-between {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-.justify-space-around {
+.justify-space-around, .justify-content-space-around {
   -webkit-justify-content: space-around;
   justify-content: space-around;
 }
 
-/* cross axis: */
+/* cross axis properties: */
 .align-items-start {
   -webkit-align-items: flex-start;
   align-items: flex-start;
@@ -202,20 +218,25 @@ ul {
   align-items: stretch;
 }
 
-/* creates flexbox container horizontal direction */
-.flex-row {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
+/**************
+ Flex Item properties:
+ **************/
+/* cross axis properties: */
+.align-self-start {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
 }
-
-/* creates flexbox container vertical direction */
-.flex-column {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
+.align-self-end {
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+.align-self-center {
+  -webkit-align-self: center;
+  align-self: center;
+}
+.align-self-stretch {
+  -webkit-align-self: stretch;
+  align-self: stretch;
 }
 
 @font-face {
@@ -356,6 +377,11 @@ h6 {
   text-align: center;
 }
 
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .text-end {
   text-align: end;
 }
@@ -412,6 +438,7 @@ button:hover, button:focus, .button:hover, .button:focus, input[type='button']:h
 /* all sections (except footer, header): */
 section {
   min-height: 25vh;
+  padding-bottom: 0.9%;
 }
 
 .title {
@@ -429,11 +456,10 @@ header {
   width: 100%;
   height: 5rem;
   background: white;
-  border-bottom: 1px solid darkgray;
 }
 header .logo {
   font-family: 'Oldenburg', serif;
-  color: #665f57;
+  color: #495164;
   font-size: 2rem;
 }
 header a {
@@ -459,9 +485,28 @@ header img {
  Home
  *******************/
 #home {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   order: 1;
+  padding-bottom: 0;
   overflow: hidden;
   height: calc(100vh - 5rem - 1px);
+}
+#home * {
+  border: 1px dodgerblue dotted;
+}
+
+.test {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 /*******************
@@ -559,13 +604,6 @@ header img {
   border-radius: 4px;
 }
 
-/*******************
- Contact
- *******************/
-#contact {
-  background-color: #fcfaf7;
-}
-
 /**************
  Footer
  **************/
@@ -595,18 +633,18 @@ footer {
 footer .container-row {
   min-height: 100%;
 }
-footer a, footer a i {
+footer a, footer a > i {
   -moz-transition: color 0.4s ease;
   -o-transition: color 0.4s ease;
   -webkit-transition: color 0.4s ease;
   transition: color 0.4s ease;
   color: darkgray;
 }
-footer a:hover, footer a i:hover {
+footer a:hover, footer a > i:hover {
   color: #646464;
   border-color: #646464;
 }
-footer i {
+footer a > i {
   font-size: 2.6rem;
   padding: 0 1rem 0 1rem;
   border: 1px solid darkgray;
