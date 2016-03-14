@@ -1,0 +1,279 @@
+/* ==========================================================================
+    Author: Dee Reddy (deesus@yandex.com)
+   ========================================================================== */
+
+@import "resets",
+        "flexgrid",
+        "typography",
+        "utility";
+        // _media.scss (at end)
+
+// TODO: simplify number of colors used:
+
+$drk-blue:      #495164;
+$alt-blue:      #196bac;    // or try #259fff
+$link-blue:     deepskyblue;
+$link-hover:    #0FA0CE;
+$selection:     #4fc8de;
+$portfolio-bg:  rgba(250, 250, 250, 1);
+$footer-bg:     rgb(245, 245, 245);
+$portfolio-hr:  #dddddd;
+$darkgray:      darkgray;
+$alt-gray:      #9f9f9f;
+$shadow-gray:   rgba(210, 210, 210, .5);
+$gray:          rgba(100, 100, 100, 1);
+$invis-gray:    rgba(100, 100, 100, 0);
+$black:         rgba(34, 34, 34, 1);    // same as #222
+
+$section-padding:   0.9%;
+$header-height:     5rem;
+$common-transition: all 0.5s ease;
+/////////////////////////////////////////////////////////////////////////////////
+
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+
+a {
+  color: $link-blue; }
+a:hover {
+  color: $link-hover; }
+
+/* Buttons: */
+button, .button, input[type='button'], input[type='submit'], input[type='reset'] {
+  display:          inline-block;
+  font-size:        1.1rem;
+  letter-spacing:   0.1rem;
+  background-color: transparent;
+  padding:          0.4rem 0.7rem;
+  cursor:           pointer;
+  border-radius:    20px;
+  border:           1px solid $invis-gray;
+  @include          transition($common-transition);
+
+  &:hover, &:focus {
+    border:         1px solid $gray;
+  }
+}
+
+/* change selection color: */
+// n.b. selector cannot be combined (CSS gotcha)
+::selection {
+  background: $selection;
+  color:      ghostwhite;
+}
+
+::-moz-selection {
+  background: $selection;
+  color:      ghostwhite;
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+/* all sections (except footer, header): */
+section {
+  min-height:     25vh;
+  padding-bottom: $section-padding;
+}
+
+.title {
+  padding: 10.2rem 0 7rem 0;
+  @include flex-wrap(wrap);
+  @include align-items(center);
+}
+
+/*******************
+ Header
+ *******************/
+header {
+  width:      100%;
+  height:     $header-height;
+  background: white;
+
+  a {
+    text-transform: uppercase;
+  }
+
+  nav {
+    height: 100%;
+  }
+
+  button {
+    margin: 0;
+    color:  $gray;
+  }
+}
+
+/*******************
+ Home
+ *******************/
+#home {
+  @include        display-flex;
+  @include        flex-direction(column);
+  order:          1;
+  padding-bottom: 0;
+  overflow:       hidden;
+  height:         calc(100vh - #{$header-height} - 1px);    // compensate for `header` and `hr`
+}
+
+.home-title {
+  margin-top: 10vh;
+}
+
+/*******************
+ About
+ *******************/
+.about-hr {
+  width:      100%;
+  height:     1px;
+  background: $portfolio-hr;    // needed when hr has height > 1px
+  color:      $portfolio-hr;
+  border:     none;
+}
+
+#about-list {
+
+  .about-li {
+    margin-bottom: 6rem;
+  }
+  figure {
+    padding-right: 5rem;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+
+  .skill-icons {
+    @include display-flex;    // centers items inside
+    color: $alt-blue;
+
+    // TODO: change to circle icons (c.f. footer icons)?
+    i {
+      color:        $drk-blue;
+      font-size:    3rem;
+      margin-right: 0.8rem;
+      margin-left:  2.2rem;
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+/*******************
+ Portfolio
+ *******************/
+#portfolio {
+  background: $portfolio-bg;
+  @include    box-shadow(inset 0 2px 4px 0 $shadow-gray);
+}
+
+/* a container (or row) for portfolio bricks: */
+.portfolio-row {
+  @include        display-flex;
+  @include        flexbox((box-orient: horizontal));
+  @include        justify-content(center);             // we want items to be centered
+  margin-bottom:  $section-padding * 2;
+
+  // N.b. the anchor acts as container:
+  a {
+    margin:     $section-padding;
+    /* resize tile upon resizing window: */
+    // we want a max of three tiles in a row -- therefore, "100%/3" (3 divs add up to 100% width of window):
+    // we also need to compensate for margins (1.2rem) on both sides -- therefore "2 * 1.2 rem":
+    max-width:  calc(100%/3 - (2 * 1.2rem));
+  }
+
+  figure {
+    @include        box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.2));
+    @include        transition(all 0.4s ease 0s);
+    padding:        1rem;
+    border-radius:  4px;
+    background:     white;
+    font-weight:    200;
+    height:         100%;         // fill up the anchor container
+
+    &:hover {
+      @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.5));
+    }
+
+    figcaption {
+      margin: 1rem 1.5rem 0.5rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size:      1.7rem;
+      margin-bottom:  0.4rem;
+    }
+
+    p {
+      margin: 0;
+      color:  dimgray;
+    }
+
+    img {
+      border-radius: 4px;
+    }
+  }
+}
+
+/**************
+ Footer
+ **************/
+/* for sticky footer, wrap everything but the footer in this selector: */
+body {
+  @include            display-flex;
+  @include            flex-direction(column);
+  -webkit-box-orient: vertical;
+  min-height:         100vh;
+}
+
+#body-wrapper {
+  @include flex(1);
+}
+
+footer {
+  @include    box-shadow(inset 0 2px 4px 0 $shadow-gray);
+  min-height: 8.5rem;
+  background: $footer-bg;
+  color:      $darkgray;
+
+  .container-row {
+    min-height: 100%;
+  }
+
+  a, a > i {
+    @include  transition(color 0.4s ease);
+    color:    $darkgray;
+    &:hover {
+      color:        $gray;
+      border-color: $gray;
+    }
+  }
+
+  a > i {
+    font-size:      2.6rem;
+    padding:        0 1rem 0 1rem;
+    border:         1px solid $darkgray;
+    border-radius:  50%;
+  }
+}
+
+/* ==========================================================================
+   Misc
+   ========================================================================== */
+
+// TODO: use svg instead:
+.div-line {
+  width:          100%;
+  height:         0;
+  border-top:     1px #dddddd solid;
+  border-bottom:  1px white solid;
+}
+
+/*******************
+ Media queries
+ *******************/
+@import "media";

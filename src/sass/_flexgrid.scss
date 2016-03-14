@@ -1,0 +1,129 @@
+@import "compass";
+@import "compass/css3/flexbox";
+
+/**************
+ Grid
+ **************/
+/* container differs from Bootstrap's `container-fluid` in that we don't use auto margins */
+.container {
+  box-sizing: border-box;
+  // needed to compensate for gutters when the rows wrap:
+  padding-right:  2rem;
+  padding-left:   2rem;
+}
+
+.row, .container-row {
+  @include display-flex;
+  @include flex(0 1 auto);
+  @include flex-direction(row);
+  @include flexbox((
+          box-orient:     horizontal,
+          box-direction:  normal
+  ));
+  @include flex-wrap(wrap);
+  margin-left:  0;
+  margin-right: 0;
+}
+
+/* use '.row' if NOT nested in '.container' otherwise use '.container-row' */
+.container-row {
+  margin-left:  -1rem;
+  margin-right: -1rem;
+}
+
+/* columns: */
+[class ^= 'col-'], .column {
+  @include flex(0 0 auto);  // shorthand for flex-grow, flex-shrink, flex-basis
+  @include box-sizing(border-box);
+  @include flex-grow(1);
+  @include flex-basis(0);
+  /* N.b. columns don't have pre-set padding */
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include flex-basis       ((100%/12) * $i);
+    -ms-flex-preferred-size:  ((100%/12) * $i);    // `-ms-flex-preferred-size` is used for IE10 support
+    max-width:                ((100%/12) * $i);
+  }
+}
+
+/**************
+ Flex Container properties:
+ **************/
+/* creates flexbox container horizontal direction */
+.flex-row {
+  @include display-flex;
+  @include flex-direction(row);
+}
+
+/* creates flexbox container vertical direction */
+.flex-column {
+  @include display-flex;
+  @include flex-direction(column);
+}
+
+/* main axis properties: */
+// N.b.: we can use full `justify-content` name or the `justify` shorthand (e.g. `.justify-start`)
+.justify, .justify-content {
+  &-start {
+    @include justify-content(flex-start);
+  }
+  &-end {
+    @include justify-content(flex-end);
+  }
+  &-center {
+    @include justify-content(center);
+  }
+  &-space-between {
+    @include justify-content(space-between);
+  }
+  &-space-around {
+    @include justify-content(space-around);
+  }
+}
+
+/* cross axis properties: */
+.align-items {
+  &-start {
+    @include align-items(flex-start);
+  }
+  &-end {
+    @include align-items(flex-end);
+  }
+  &-center {
+    @include align-items(center);
+  }
+  &-stretch {
+    @include align-items(stretch);
+  }
+  // TODO: do we really need to specify the `baseline` value? I.e. `align-items-baseline` ?
+}
+
+/**************
+ Flex Item properties:
+ **************/
+
+/* cross axis properties: */
+.align-self {
+  &-start{
+    @include align-self(flex-start);
+  }
+  &-end {
+    @include align-self(flex-end);
+  }
+  &-center {
+    @include align-self(center);
+  }
+  &-stretch {
+    @include align-self(stretch);
+  }
+  // TODO: similarly, do we need to specify `baseline` for align-self property?
+}
+
+/**************
+ Flex utilities:
+ **************/
+.flex-grow {
+  @include flex-grow(1);
+}

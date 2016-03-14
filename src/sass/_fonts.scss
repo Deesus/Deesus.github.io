@@ -1,0 +1,21 @@
+// TODO: replace with compass font-face mixin:
+@font-face {
+  font-family: 'OpenSans';
+  font-style:   normal;
+  font-weight:  400;
+  src:          url('../assets/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family:  'OpenSans';
+  font-style:   normal;
+  font-weight:  300;
+  src:          url('../assets/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family:  'OpenSans';
+  font-style:   normal;
+  font-weight:  600;
+  src:          url('../assets/OpenSans-Bold.ttf');
+}

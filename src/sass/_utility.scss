@@ -1,0 +1,38 @@
+/* removes both padding and margins */
+.no-gutter, .no-pad-margin {
+  padding:  0;
+  margin:   0;
+}
+
+/* use if nested in fluid and want to clear */
+.clear-fluid {
+  margin-left:  -2rem;
+  margin-right: -2rem;
+}
+
+.auto-margin, .margin-center {
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+/* changes flex display to 'block': */
+.clear {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align:   justify;
+  text-justify: inter-word;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.full-height {
+  height: 100%;
+}

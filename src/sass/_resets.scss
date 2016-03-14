@@ -1,0 +1,29 @@
+/**************
+ Resets
+ **************/
+// TODO: See Skeleton resets
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, figure {
+  /* image automatically resizes to max-width of the boundary: */
+  max-width:  100%;
+  height:     auto;
+
+  // removes the extra space on bottom of a div that contains an image:
+  display:    block;
+}
+
+ul {
+  list-style: none;
+}
