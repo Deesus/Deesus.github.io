@@ -239,6 +239,14 @@ ul {
   align-self: stretch;
 }
 
+/**************
+ Flex utilities:
+ **************/
+.flex-grow {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
 @font-face {
   font-family: 'OpenSans';
   font-style: normal;
@@ -256,11 +264,6 @@ ul {
   font-style: normal;
   font-weight: 600;
   src: url("../assets/OpenSans-Bold.ttf");
-}
-@font-face {
-  font-family: 'Oldenburg';
-  font-style: normal;
-  src: url("../assets/Oldenburg-Regular.ttf");
 }
 /**************
  Typography:
@@ -403,22 +406,21 @@ a:hover {
 
 /* Buttons: */
 button, .button, input[type='button'], input[type='submit'], input[type='reset'] {
-  font-size: 1.1rem;
-  background-color: transparent;
   display: inline-block;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  background-color: transparent;
   padding: 0.4rem 0.7rem;
   cursor: pointer;
   border-radius: 20px;
-  border: 1px solid rgba(34, 34, 34, 0);
-  letter-spacing: 0.1rem;
+  border: 1px solid rgba(100, 100, 100, 0);
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 button:hover, button:focus, .button:hover, .button:focus, input[type='button']:hover, input[type='button']:focus, input[type='submit']:hover, input[type='submit']:focus, input[type='reset']:hover, input[type='reset']:focus {
-  border: 1px solid #222222;
-  color: black;
+  border: 1px solid #646464;
 }
 
 /* change selection color: */
@@ -457,11 +459,6 @@ header {
   height: 5rem;
   background: white;
 }
-header .logo {
-  font-family: 'Oldenburg', serif;
-  color: #495164;
-  font-size: 2rem;
-}
 header a {
   text-transform: uppercase;
 }
@@ -471,14 +468,6 @@ header nav {
 header button {
   margin: 0;
   color: #646464;
-}
-header img {
-  max-height: 4rem;
-  width: auto;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
 }
 
 /*******************
@@ -494,19 +483,9 @@ header img {
   overflow: hidden;
   height: calc(100vh - 5rem - 1px);
 }
-#home * {
-  border: 1px dodgerblue dotted;
-}
 
-.test {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1;
-  flex: 1;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
+.home-title {
+  margin-top: 10vh;
 }
 
 /*******************
@@ -515,8 +494,8 @@ header img {
 .about-hr {
   width: 100%;
   height: 1px;
-  background: #e4dcd2;
-  color: #e4dcd2;
+  background: #dddddd;
+  color: #dddddd;
   border: none;
 }
 
