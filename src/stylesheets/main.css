@@ -511,7 +511,6 @@ header button {
 #about-list .skill-icons {
   display: -webkit-flex;
   display: flex;
-  color: #196bac;
 }
 #about-list .skill-icons i {
   color: #495164;
@@ -745,9 +744,20 @@ footer a > i {
 /**************
   Misc queries:
 **************/
+/* By making the image a 'block' element, it becomes fluid: */
 @media screen and (max-width: 627px) {
   #home .flex-grow {
     margin-top: 2.6rem;
     display: block;
+  }
+}
+/* We 'insert' the icon description when screen is large enough
+   (i.e. we 'remove' the content on small screens) */
+@media screen and (min-width: 400px) {
+  .skill-icons span::before {
+    content: " " attr(data-skill);
+    font-size: 1.5rem;
+    font-style: normal;
+    color: #196bac;
   }
 }

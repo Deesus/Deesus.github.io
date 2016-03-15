@@ -77,7 +77,10 @@
                                 I am always looking to expand my understanding.
                             </p>
                             <div class="skill-icons">
-                                <i class="ion-code-working"></i> Programmer <i class="ion-clipboard"></i> Writer
+                                <!-- N.b. we need to place `data` attr in `span` because placing `content` using
+                                 `::before` means we retain styles (esp. line height) rather than `i` styles -->
+                                <i class="ion-code-working"></i>    <span data-skill="Programmer"></span>
+                                <i class="ion-clipboard"></i>       <span data-skill="Writer"></span>
                             </div>
                         </div>
                     </div> <!-- /.about-li -->
@@ -94,7 +97,9 @@
                                 I'm also experienced in SQL and RDBMS.
                             </p>
                             <div class="skill-icons">
-                                <i class="ion-social-python"></i> Python <i class="ion-social-nodejs"></i> Node.js <i class="ion-social-buffer"></i> SQL
+                                <i class="ion-social-python" data-skill="Python"></i>   <span data-skill="Python"></span>
+                                <i class="ion-social-nodejs" data-skill="Node.js"></i>  <span data-skill="Python"></span>
+                                <i class="ion-social-buffer" data-skill="SQL"></i>      <span data-skill="Python"></span>
                             </div>
                         </div>
                     </div> <!-- /.about-li -->
@@ -112,7 +117,9 @@
                                 My approach is: plan, define, design, refine, and then deploy.
                             </p>
                             <div class="skill-icons">
-                                <i class="ion-social-html5"></i> HTML5  <i class="ion-social-sass"></i> CSS/Sass <i class="ion-social-javascript"></i> JavaScript
+                                <i class="ion-social-html5"></i>        <span data-skill="HTML5"></span>
+                                <i class="ion-social-sass"></i>         <span data-skill="CSS/Sass"></span>
+                                <i class="ion-social-javascript"></i>   <span data-skill="JavaScript"></span>
                             </div>
                         </div>
                     </div> <!-- /.about-li -->

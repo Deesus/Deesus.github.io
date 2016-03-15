@@ -147,7 +147,6 @@ header {
 
   .skill-icons {
     @include display-flex;    // centers items inside
-    color: $alt-blue;
 
     // TODO: change to circle icons (c.f. footer icons)?
     i {
