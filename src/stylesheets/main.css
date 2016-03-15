@@ -533,6 +533,11 @@ header button {
   box-shadow: inset 0 2px 4px 0 rgba(210, 210, 210, 0.5);
 }
 
+.portfolio-title {
+  height: 4rem;
+  width: 74%;
+}
+
 /* a container (or row) for portfolio bricks: */
 .portfolio-row {
   display: -webkit-flex;
@@ -657,11 +662,16 @@ footer a > i {
   }
 
   /* change flex direction for relevant sections: */
+  .portfolio-title,
   .about-li,
   .portfolio-row,
   .container-row {
     -webkit-flex-direction: column;
     flex-direction: column;
+  }
+
+  .title {
+    margin-top: 0;
   }
 
   /**************
@@ -675,6 +685,10 @@ footer a > i {
   /**************
     Home section:
   **************/
+  #home {
+    height: auto;
+  }
+
   .home-title {
     margin-top: 4vh;
   }
@@ -704,6 +718,15 @@ footer a > i {
   /**************
     Portfolio section:
   **************/
+  .portfolio-title {
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .div-line {
+    display: none;
+  }
+
   .portfolio-row {
     /* Add gutters and auto center figure elements: */
   }
@@ -717,5 +740,14 @@ footer a > i {
   }
   .portfolio-row a h4, .portfolio-row a p {
     text-align: center;
+  }
+}
+/**************
+  Misc queries:
+**************/
+@media screen and (max-width: 627px) {
+  #home .flex-grow {
+    margin-top: 2.6rem;
+    display: block;
   }
 }

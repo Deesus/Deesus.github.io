@@ -170,6 +170,11 @@ header {
   @include    box-shadow(inset 0 2px 4px 0 $shadow-gray);
 }
 
+.portfolio-title {
+  height: 4rem;
+  width:  74%;
+}
+
 /* a container (or row) for portfolio bricks: */
 .portfolio-row {
   @include        display-flex;

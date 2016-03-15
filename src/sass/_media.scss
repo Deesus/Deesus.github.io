@@ -1,6 +1,7 @@
 @import "compass/css3/flexbox";
 @import "compass";
 
+$portfolio-hr:  #dddddd;
 /* ==========================================================================
    Media query (Holy Grail Layout):
    ========================================================================== */
@@ -16,10 +17,15 @@
   }
 
   /* change flex direction for relevant sections: */
+  .portfolio-title,
   .about-li,
   .portfolio-row,
   .container-row {
     @include flex-direction(column);
+  }
+
+  .title {
+    margin-top: 0;
   }
 
   /**************
@@ -32,6 +38,9 @@
   /**************
     Home section:
   **************/
+  #home {
+    height: auto;
+  }
   .home-title {
     margin-top: 4vh;
   }
@@ -66,6 +75,14 @@
   /**************
     Portfolio section:
   **************/
+  .portfolio-title {
+    @include flex-wrap(nowrap);
+  }
+
+  .div-line {
+    display: none;
+  }
+
   .portfolio-row {
     /* Add gutters and auto center figure elements: */
     a {
@@ -80,5 +97,16 @@
         text-align:   center;
       }
     }
+  }
+}
+
+/**************
+  Misc queries:
+**************/
+// By making the image a 'block' element, it becomes fluid:
+@media screen and (max-width: 627px) {
+  #home .flex-grow {
+    margin-top: 2.6rem;
+    display:    block;
   }
 }
