@@ -1,34 +1,84 @@
-/* Phones */
-@media all and (max-width : 480px) {
-  // add styles
-}
+@import "compass/css3/flexbox";
+@import "compass";
 
-/* Small Screens: */
-@media all and (min-width: 481px) and (max-width: 769px) {
-
-}
-
-/* Tablets */
-@media all and (min-width : 768px) and (max-width: 1024px) {
-  // add styles
-}
-
-/* Laptops/Desktops: */
-@media all and (min-width: 1224px) {
-  // add styles
-}
-
-/* Large Screens: */
-@media all and (min-width : 1824px) {
-  // add styles
-}
-
-/* Holy Grail Layout */
+/* ==========================================================================
+   Media query (Holy Grail Layout):
+   ========================================================================== */
 @media screen and (max-width: 640px) {
-  // TODO: replace with selector
-  .place-holder {
+
+  /**************
+    All sections:
+  **************/
+  [class^='col-'] {
+    text-align:   center;
+    max-width:    100%;
+    width:        100%;
+  }
+
+  /* change flex direction for relevant sections: */
+  .about-li,
+  .portfolio-row,
+  .container-row {
     @include flex-direction(column);
-    @include flexbox((box-orient: vertical));
-    order: 0;
+  }
+
+  /**************
+    Header section:
+  **************/
+  nav > div {
+    @include flex(1 1 auto !important) ;
+  }
+
+  /**************
+    Home section:
+  **************/
+  .home-title {
+    margin-top: 4vh;
+  }
+
+  /**************
+    About section:
+  **************/
+  #about-list {
+    figure {
+      padding: 0;
+    }
+  }
+
+  .about-li {
+    [class^='col-'],
+    .skill-icons {
+      @include justify-content(center);
+    }
+
+    & > div {
+      max-width:    100%;
+      width:        100%;
+    }
+
+    p {
+      padding:      0 2rem;
+      text-align:   justify;
+      text-justify: inter-word;
+    }
+  }
+
+  /**************
+    Portfolio section:
+  **************/
+  .portfolio-row {
+    /* Add gutters and auto center figure elements: */
+    a {
+      max-width:  70%;
+      margin:     1rem auto 1rem auto;
+
+      img {
+        margin-left:  auto;
+        margin-right: auto;
+      }
+      h4, p {
+        text-align:   center;
+      }
+    }
   }
 }
