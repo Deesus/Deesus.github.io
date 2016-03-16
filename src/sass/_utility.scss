@@ -30,6 +30,7 @@
 }
 
 .text-end {
+  text-align: right;  // IE support (overwritten on other browsers)
   text-align: end;
 }
 

@@ -386,6 +386,7 @@ h6 {
 }
 
 .text-end {
+  text-align: right;
   text-align: end;
 }
 
@@ -586,6 +587,8 @@ header button {
 }
 .portfolio-row figure img {
   border-radius: 4px;
+  width: 100%;
+  /* fixes IE image resize 'bug' */
 }
 
 /**************
@@ -663,6 +666,7 @@ footer a > i {
   }
 
   /* change flex direction for relevant sections: */
+  nav,
   .portfolio-title,
   .about-li,
   .portfolio-row,
@@ -679,9 +683,10 @@ footer a > i {
   /**************
     Header section:
   **************/
-  nav > div {
-    -webkit-flex: 1 1 auto !important;
-    flex: 1 1 auto !important;
+  nav {
+    -webkit-flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
+    /* for IE 'bug' */
   }
 
   /**************
@@ -784,5 +789,10 @@ footer a > i {
     font-size: 1.5rem;
     font-style: normal;
     color: #196bac;
+  }
+}
+@media screen and (max-width: 280px) {
+  header {
+    display: none;
   }
 }
