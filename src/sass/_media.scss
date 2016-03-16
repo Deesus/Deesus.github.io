@@ -42,6 +42,7 @@ $alt-blue:      #196bac;
   **************/
   #home {
     height: auto;
+    img { width:100%; }   /* IE 'bug': won't resize/respond correctly otherwise */
   }
   .home-title {
     margin-top: 4vh;
@@ -87,15 +88,22 @@ $alt-blue:      #196bac;
   }
 
   .portfolio-row {
-    // centers items:
-    @include align-items(center);
 
     /* Add gutters and auto center figure elements: */
     a {
-      margin: 1rem auto 1rem auto;
+      max-width:      70%;
+      margin-top:     1rem;
+      margin-bottom:  1rem;
+      align-self:     center;
 
+      img {
+        width:        100%;   /* fixes IE image resize 'bug' */
+        margin-left:  auto;
+        margin-right: auto;
+
+      }
       h4, p {
-        text-align: center;
+        text-align:   center;
       }
     }
   }

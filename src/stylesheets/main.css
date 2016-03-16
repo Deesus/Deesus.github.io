@@ -689,6 +689,10 @@ footer a > i {
   **************/
   #home {
     height: auto;
+    /* IE 'bug': won't resize/respond correctly otherwise */
+  }
+  #home img {
+    width: 100%;
   }
 
   .home-title {
@@ -732,12 +736,19 @@ footer a > i {
   }
 
   .portfolio-row {
-    -webkit-align-items: center;
-    align-items: center;
     /* Add gutters and auto center figure elements: */
   }
   .portfolio-row a {
-    margin: 1rem auto 1rem auto;
+    max-width: 70%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-self: center;
+  }
+  .portfolio-row a img {
+    width: 100%;
+    /* fixes IE image resize 'bug' */
+    margin-left: auto;
+    margin-right: auto;
   }
   .portfolio-row a h4, .portfolio-row a p {
     text-align: center;
