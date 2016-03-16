@@ -235,7 +235,7 @@ body {
 }
 
 #body-wrapper {
-  @include flex(1);
+  @include flex(1 1 auto);    // for IE, we need to explicitly set all flex values rather than just `flex(1);`
 }
 
 footer {

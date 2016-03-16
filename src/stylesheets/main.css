@@ -251,19 +251,19 @@ ul {
   font-family: 'OpenSans';
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/OpenSans-Regular.ttf");
+  src: url("../../public/assets/OpenSans-Reg.woff");
 }
 @font-face {
   font-family: 'OpenSans';
   font-style: normal;
   font-weight: 300;
-  src: url("../assets/OpenSans-Light.ttf");
+  src: url("../../public/assets/OpenSans-Light.woff");
 }
 @font-face {
   font-family: 'OpenSans';
   font-style: normal;
   font-weight: 600;
-  src: url("../assets/OpenSans-Bold.ttf");
+  src: url("../../public/assets/OpenSans-Bold.woff");
 }
 /**************
  Typography:
@@ -602,8 +602,8 @@ body {
 }
 
 #body-wrapper {
-  -webkit-flex: 1;
-  flex: 1;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 footer {
