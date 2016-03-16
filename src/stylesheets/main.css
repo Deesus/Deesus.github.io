@@ -551,6 +551,8 @@ header button {
   margin: 0.9%;
   /* resize tile upon resizing window: */
   max-width: calc(100%/3 - (2 * 1.2rem));
+  display: -webkit-flex;
+  display: flex;
 }
 .portfolio-row figure {
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -565,7 +567,6 @@ header button {
   border-radius: 4px;
   background: white;
   font-weight: 200;
-  height: 100%;
 }
 .portfolio-row figure:hover {
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
@@ -610,6 +611,7 @@ footer {
   -webkit-box-shadow: inset 0 2px 4px 0 rgba(210, 210, 210, 0.5);
   box-shadow: inset 0 2px 4px 0 rgba(210, 210, 210, 0.5);
   min-height: 8.5rem;
+  height: 8.5rem;
   background: whitesmoke;
   color: darkgray;
 }
@@ -664,7 +666,8 @@ footer a > i {
   .portfolio-title,
   .about-li,
   .portfolio-row,
-  .container-row {
+  .container-row,
+  footer > .row {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
@@ -739,6 +742,18 @@ footer a > i {
   }
   .portfolio-row a h4, .portfolio-row a p {
     text-align: center;
+  }
+
+  /**************
+    Footer section:
+  **************/
+  footer > .row {
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  footer .col-6 {
+    padding-top: 0.45rem;
   }
 }
 /**************

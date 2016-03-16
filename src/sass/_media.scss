@@ -21,7 +21,8 @@ $alt-blue:      #196bac;
   .portfolio-title,
   .about-li,
   .portfolio-row,
-  .container-row {
+  .container-row,
+  footer > .row {
     @include flex-direction(column);
   }
 
@@ -98,6 +99,15 @@ $alt-blue:      #196bac;
         text-align:   center;
       }
     }
+  }
+  /**************
+    Footer section:
+  **************/
+  footer > .row {
+    @include flex-wrap(nowrap);
+  }
+  footer .col-6 { // i.e. the column w/ icons
+    padding-top: 0.45rem;
   }
 }
 

@@ -180,7 +180,6 @@ header {
   @include        flexbox((box-orient: horizontal));
   @include        justify-content(center);             // we want items to be centered
   margin-bottom:  $section-padding * 2;
-
   // N.b. the anchor acts as container:
   a {
     margin:     $section-padding;
@@ -188,6 +187,8 @@ header {
     // we want a max of three tiles in a row -- therefore, "100%/3" (3 divs add up to 100% width of window):
     // we also need to compensate for margins (1.2rem) on both sides -- therefore "2 * 1.2 rem":
     max-width:  calc(100%/3 - (2 * 1.2rem));
+    // by making anchors a flexbox, we make child elements equal height
+    @include    display-flex;
   }
 
   figure {
@@ -197,7 +198,6 @@ header {
     border-radius:  4px;
     background:     white;
     font-weight:    200;
-    height:         100%;         // fill up the anchor container
 
     &:hover {
       @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.5));
@@ -241,6 +241,7 @@ body {
 footer {
   @include    box-shadow(inset 0 2px 4px 0 $shadow-gray);
   min-height: 8.5rem;
+  height:     8.5rem;
   background: $footer-bg;
   color:      $darkgray;
 
