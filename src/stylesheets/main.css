@@ -704,6 +704,8 @@ footer a > i {
 
   .about-li [class^='col-'],
   .about-li .skill-icons {
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
     -webkit-justify-content: center;
     justify-content: center;
   }
@@ -730,15 +732,12 @@ footer a > i {
   }
 
   .portfolio-row {
+    -webkit-align-items: center;
+    align-items: center;
     /* Add gutters and auto center figure elements: */
   }
   .portfolio-row a {
-    max-width: 70%;
     margin: 1rem auto 1rem auto;
-  }
-  .portfolio-row a img {
-    margin-left: auto;
-    margin-right: auto;
   }
   .portfolio-row a h4, .portfolio-row a p {
     text-align: center;

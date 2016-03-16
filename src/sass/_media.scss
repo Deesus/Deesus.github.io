@@ -59,6 +59,7 @@ $alt-blue:      #196bac;
   .about-li {
     [class^='col-'],
     .skill-icons {
+      @include flex(1 1 auto);            // explicit deceleration for IE
       @include justify-content(center);
     }
 
@@ -86,17 +87,15 @@ $alt-blue:      #196bac;
   }
 
   .portfolio-row {
+    // centers items:
+    @include align-items(center);
+
     /* Add gutters and auto center figure elements: */
     a {
-      max-width:  70%;
-      margin:     1rem auto 1rem auto;
+      margin: 1rem auto 1rem auto;
 
-      img {
-        margin-left:  auto;
-        margin-right: auto;
-      }
       h4, p {
-        text-align:   center;
+        text-align: center;
       }
     }
   }
