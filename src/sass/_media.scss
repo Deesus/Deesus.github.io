@@ -34,9 +34,6 @@ $alt-blue:      #196bac;
   /**************
     Header section:
   **************/
-  nav {
-    @include flex-wrap(nowrap !important);    /* for IE 'bug' */
-  }
 
   /**************
     Home section:
@@ -80,10 +77,6 @@ $alt-blue:      #196bac;
   /**************
     Portfolio section:
   **************/
-  .portfolio-title {
-    @include flex-wrap(nowrap);
-  }
-
   .div-line {
     display: none;
   }
@@ -111,9 +104,6 @@ $alt-blue:      #196bac;
   /**************
     Footer section:
   **************/
-  footer > .row {
-    @include flex-wrap(nowrap);
-  }
   footer .col-6 { // i.e. the column w/ icons
     padding-top: 0.45rem;
   }
