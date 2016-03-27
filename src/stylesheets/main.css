@@ -28,6 +28,10 @@ ul {
   list-style: none;
 }
 
+a {
+  cursor: pointer;
+}
+
 /**************
  Grid
  **************/
@@ -49,8 +53,8 @@ ul {
   -webkit-box-direction: normal;
   box-orient: horizontal;
   box-direction: normal;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   margin-left: 0;
   margin-right: 0;
 }
@@ -446,10 +450,60 @@ section {
 
 .title {
   padding: 10.2rem 0 7rem 0;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-align-items: center;
   align-items: center;
+}
+
+/*******************
+ Drop-down menu (responsive nav)
+ *******************/
+#drop-down-menu {
+  right: 0;
+  z-index: 99;
+  position: fixed;
+  height: 100vh;
+  max-width: 100%;
+  width: 20rem;
+  text-align: end;
+}
+#drop-down-menu .triple-bar {
+  padding-right: 2rem;
+  opacity: 0;
+  visibility: hidden;
+}
+#drop-down-menu ul {
+  opacity: 0;
+  visibility: hidden;
+}
+#drop-down-menu li {
+  padding-right: 2rem;
+}
+#drop-down-menu li:hover {
+  background: #196bac;
+}
+#drop-down-menu li a {
+  color: #54585E;
+  width: 100%;
+  height: 3.4rem;
+}
+
+.ion-navicon {
+  color: #54585E;
+  font-size: 2.6rem;
+}
+.ion-navicon::before {
+  margin-top: 0.7rem;
+}
+
+/* utility selectors: */
+.show-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hide-menu {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /*******************
@@ -660,7 +714,6 @@ footer a > i {
     All sections:
   **************/
   [class^='col-'] {
-    text-align: center;
     max-width: 100%;
     width: 100%;
   }
@@ -681,15 +734,6 @@ footer a > i {
   }
 
   /**************
-    Header section:
-  **************/
-  nav {
-    -webkit-flex-wrap: nowrap !important;
-    flex-wrap: nowrap !important;
-    /* for IE 'bug' */
-  }
-
-  /**************
     Home section:
   **************/
   #home {
@@ -702,6 +746,12 @@ footer a > i {
 
   .home-title {
     margin-top: 4vh;
+  }
+
+  /* By making the image a 'block' element, it becomes fluid: */
+  #home .flex-grow {
+    margin-top: 2.6rem;
+    display: block;
   }
 
   /**************
@@ -731,11 +781,6 @@ footer a > i {
   /**************
     Portfolio section:
   **************/
-  .portfolio-title {
-    -webkit-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-  }
-
   .div-line {
     display: none;
   }
@@ -762,25 +807,16 @@ footer a > i {
   /**************
     Footer section:
   **************/
-  footer > .row {
-    -webkit-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+  footer [class^='col-'] {
+    text-align: center;
   }
-
-  footer .col-6 {
+  footer .social-container {
     padding-top: 0.45rem;
   }
 }
 /**************
   Misc queries:
 **************/
-/* By making the image a 'block' element, it becomes fluid: */
-@media screen and (max-width: 627px) {
-  #home .flex-grow {
-    margin-top: 2.6rem;
-    display: block;
-  }
-}
 /* We 'insert' the icon description when screen is large enough
    (i.e. we 'remove' the content on small screens) */
 @media screen and (min-width: 400px) {
@@ -791,8 +827,16 @@ footer a > i {
     color: #196bac;
   }
 }
-@media screen and (max-width: 280px) {
+/*
+  Header section:
+*/
+@media screen and (max-width: 540px) {
   header {
     display: none;
+  }
+
+  .triple-bar {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }

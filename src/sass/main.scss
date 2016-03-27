@@ -80,8 +80,62 @@ section {
 
 .title {
   padding: 10.2rem 0 7rem 0;
-  @include flex-wrap(wrap);
   @include align-items(center);
+}
+
+/*******************
+ Drop-down menu (responsive nav)
+ *******************/
+
+#drop-down-menu {
+  right:      0;
+  z-index:    99;
+  position:   fixed;
+  height:     100vh;
+  max-width:  100%;
+  width:      20rem;
+  text-align: end;
+
+  .triple-bar {
+    padding-right:  2rem;
+    opacity:        0;
+    visibility:     hidden;
+  }
+  ul {
+    opacity:    0;
+    visibility: hidden;
+  }
+  li {
+    padding-right:  2rem;
+    &:hover {
+      background:   $alt-blue;
+    }
+    a {
+      color:  $text-gray;
+      width:  100%;
+      height: 3.4rem;
+    }
+  }
+}
+
+
+.ion-navicon {
+  color:      $text-gray;
+  font-size:  2.6rem;
+  &::before {;
+    margin-top: 0.7rem;
+  }
+}
+
+/* utility selectors: */
+.show-menu {
+  opacity:    1 !important;
+  visibility: visible !important;
+}
+
+.hide-menu {
+  opacity:    0;
+  visibility: hidden;
 }
 
 /*******************
@@ -95,11 +149,9 @@ header {
   a {
     text-transform: uppercase;
   }
-
   nav {
     height: 100%;
   }
-
   button {
     margin: 0;
     color:  $gray;

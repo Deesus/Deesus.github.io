@@ -2,7 +2,7 @@
 $(document).ready(function() {
     var menuShown       = false;
     var $menuSelection  = $('.triple-bar, #drop-down-menu > a');
-    var $dropMenu       = $('#drop-down-menu');
+    var $dropMenu       = $('#drop-down-menu ul');
 
     $menuSelection.click(function() {
         if(menuShown) {
