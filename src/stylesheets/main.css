@@ -467,6 +467,10 @@ section {
   font-size: 2.4rem;
   text-align: end;
   background-color: transparent;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 #drop-down-menu .triple-bar {
   padding-right: 2rem;
@@ -474,12 +478,13 @@ section {
   visibility: hidden;
 }
 #drop-down-menu ul {
+  opacity: 0;
+  visibility: hidden;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
+  text-align: end;
 }
 #drop-down-menu li {
   padding-right: 2rem;
@@ -488,6 +493,9 @@ section {
 #drop-down-menu li a {
   color: #54585E;
   width: 100%;
+}
+#drop-down-menu li a:hover {
+  color: #196bac;
 }
 
 /* triple bar logo */
@@ -505,17 +513,8 @@ section {
   visibility: visible !important;
 }
 
-.hide-menu {
-  opacity: 0;
-  visibility: hidden;
-}
-
 .fill-bg {
   background-color: #fafafa !important;
-}
-
-.hide-bg {
-  background-color: transparent;
 }
 
 /*******************

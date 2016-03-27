@@ -98,15 +98,17 @@ section {
   font-size:  2.4rem;
   text-align: end;
   background-color: rgba(0, 0, 0, 0);
+  @include          transition($quick-transition);
   .triple-bar {
     padding-right:  2rem;
     opacity:        0;
     visibility:     hidden;
   }
   ul {
-    @include    transition($quick-transition);
     opacity:    0;
     visibility: hidden;
+    @include    transition($quick-transition);
+    text-align: end;
   }
   li {
     padding-right:  2rem;
@@ -114,6 +116,9 @@ section {
     a {
       color:  $text-gray;
       width:  100%;
+      &:hover {
+        color: $alt-blue;
+      }
     }
   }
 }
@@ -132,17 +137,8 @@ section {
   visibility: visible !important;
 }
 
-.hide-menu {
-  opacity:    0;
-  visibility: hidden;
-}
-
 .fill-bg {
   background-color: rgba(250, 250, 250, 1) !important;
-}
-
-.hide-bg {
-  background-color: rgba(0, 0, 0, 0);
 }
 
 /*******************
