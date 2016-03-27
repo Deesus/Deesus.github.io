@@ -95,6 +95,7 @@ section {
   max-width:  100%;
   width:      100%;
   font-size:  2.4rem;
+  text-align: right;      // for IE
   text-align: end;
   background-color: rgba(0, 0, 0, 0);
   @include          transition($quick-transition);
@@ -107,6 +108,7 @@ section {
     opacity:    0;
     visibility: hidden;
     @include    transition($quick-transition);
+    text-align: right;    // for IE
     text-align: end;
   }
   li {
