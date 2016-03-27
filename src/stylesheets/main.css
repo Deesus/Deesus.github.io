@@ -472,14 +472,15 @@ section {
   visibility: hidden;
 }
 #drop-down-menu ul {
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
 }
 #drop-down-menu li {
   padding-right: 2rem;
-}
-#drop-down-menu li:hover {
-  background: #196bac;
 }
 #drop-down-menu li a {
   color: #54585E;

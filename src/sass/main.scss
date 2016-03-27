@@ -28,6 +28,7 @@ $black:         rgba(34, 34, 34, 1);    // same as #222
 $section-padding:   0.9%;
 $header-height:     5rem;
 $common-transition: all 0.5s ease;
+$quick-transition:  all 0.3s ease;
 /////////////////////////////////////////////////////////////////////////////////
 
 
@@ -95,21 +96,18 @@ section {
   max-width:  100%;
   width:      20rem;
   text-align: end;
-
   .triple-bar {
     padding-right:  2rem;
     opacity:        0;
     visibility:     hidden;
   }
   ul {
+    @include    transition($quick-transition);
     opacity:    0;
     visibility: hidden;
   }
   li {
     padding-right:  2rem;
-    &:hover {
-      background:   $alt-blue;
-    }
     a {
       color:  $text-gray;
       width:  100%;
