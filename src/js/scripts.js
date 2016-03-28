@@ -5,16 +5,13 @@ $(document).ready(function() {
      *************************/
     var menuShown       = false;
     var $menuContainer  = $('#drop-down-menu');
-    var $menuSelection  = $menuContainer.find('a');
-    var $dropMenu       = $menuContainer.children('ul');
+    var $menuLinks      = $menuContainer.find('a');
     function showMenu() {
-        $dropMenu.addClass('show-menu');
-        $menuContainer.addClass('fill-bg');
+        $menuLinks.removeClass('hidden');
         menuShown = true;
     }
     function hideMenu() {
-        $dropMenu.removeClass('show-menu');
-        $menuContainer.removeClass('fill-bg');
+        $menuLinks.addClass('hidden');
         menuShown = false;
     }
 
@@ -22,7 +19,7 @@ $(document).ready(function() {
      * Event handlers:
      *************************/
     // If 'triple-bar' logo is clicked, display/hide menu:
-    $menuSelection.click(function() {
+    $menuLinks.click(function() {
         if(!menuShown) {
             showMenu();
         }

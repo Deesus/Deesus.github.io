@@ -10,8 +10,8 @@
 
     <!-- Styles -->
     <!-- TODO: make sure you point to minified CSS for production -->
-    <link rel="stylesheet" href="./public/stylesheets/styles.min.css">
-    <!--<link rel="stylesheet" href="./src/stylesheets/main.css">-->
+    <!--<link rel="stylesheet" href="./public/stylesheets/styles.min.css">-->
+    <link rel="stylesheet" href="./src/stylesheets/main.css">
 
     <!-- Ionic icons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -37,13 +37,14 @@
             </header>
             <!-- ================ Adaptive Menu ================ -->
             <nav id="drop-down-menu">
-                <a class="triple-bar"><i class="ion-navicon"></i></a>
-                <ul>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#portfolio">portfolio</a></li>
-                    <li><a href="mailto:deesus@yandex.com" target="_blank">contact</a></li>
+                <a class="triple-bar hidden"><i class="ion-navicon"></i></a>
+                <ul class="hidden">
+                    <li><a class="hidden" href="#about">about</a></li>
+                    <li><a class="hidden" href="#portfolio">portfolio</a></li>
+                    <li><a class="hidden" href="mailto:deesus@yandex.com" target="_blank">contact</a></li>
                 </ul>
             </nav>
+            <!--<div class="full-canvas"></div>-->
 
             <!-- ================ HOME ================ -->
             <section id="home" class="">
@@ -274,7 +275,10 @@
     <script src="http://code.jquery.com/jquery-2.2.2.min.js"
             integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
             crossorigin="anonymous"></script>
+
     <!-- custom JS -->
-    <script src="./public/js/scripts.min.js"></script>
+    <!-- TODO: ensure pointed to minified JS for production -->
+    <!--<script src="./public/js/scripts.min.js"></script>-->
+    <script src="./src/js/scripts.js"></script>
 </body>
 </html>

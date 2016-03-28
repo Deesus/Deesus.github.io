@@ -458,12 +458,10 @@ section {
  Adaptive Menu (drop-down menu)
  *******************/
 #drop-down-menu {
+  background: royalblue;
   right: 0;
   z-index: 99;
   position: fixed;
-  height: 100%;
-  max-width: 100%;
-  width: 100%;
   font-size: 2.4rem;
   text-align: right;
   text-align: end;
@@ -475,12 +473,10 @@ section {
 }
 #drop-down-menu .triple-bar {
   padding-right: 2rem;
-  opacity: 0;
-  visibility: hidden;
 }
 #drop-down-menu ul {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -509,14 +505,26 @@ section {
   margin-top: 0.7rem;
 }
 
+.full-canvas {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 90;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  background-color: #fafafa;
+}
+
 /* menu utility selectors: */
 .show-menu {
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-.fill-bg {
-  background-color: #fafafa !important;
+.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /*******************

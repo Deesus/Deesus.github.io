@@ -88,12 +88,10 @@ section {
  Adaptive Menu (drop-down menu)
  *******************/
 #drop-down-menu {
+  background: royalblue;
   right:      0;
   z-index:    99;
   position:   fixed;
-  height:     100%;
-  max-width:  100%;
-  width:      100%;
   font-size:  2.4rem;
   text-align: right;      // for IE
   text-align: end;
@@ -101,12 +99,10 @@ section {
   @include          transition($quick-transition);
   .triple-bar {
     padding-right:  2rem;
-    opacity:        0;
-    visibility:     hidden;
   }
   ul {
-    opacity:    0;
-    visibility: hidden;
+    opacity:    1;
+    visibility: visible;
     @include    transition($quick-transition);
     text-align: right;    // for IE
     text-align: end;
@@ -115,10 +111,10 @@ section {
     padding-right:  2rem;
     padding-top:    0.3rem;
     a {
-      color:  $text-gray;
-      width:  100%;
+      color:    $text-gray;
+      width:    100%;
       &:hover {
-        color: $alt-blue;
+        color:  $alt-blue;
       }
     }
   }
@@ -126,11 +122,22 @@ section {
 
 /* triple bar menu logo */
 .ion-navicon {
-  color:      $text-gray;
-  font-size:  3.7rem;
-  &::before {;
+  color:        $text-gray;
+  font-size:    3.7rem;
+  &::before {
     margin-top: 0.7rem;
   }
+}
+
+.full-canvas {
+  position:   fixed;
+  opacity:    0;
+  visibility: hidden;
+  z-index:    90;
+  height:     100%;
+  max-width:  100%;
+  width:      100%;
+  background-color: rgba(250, 250, 250, 1);
 }
 
 /* menu utility selectors: */
@@ -139,9 +146,11 @@ section {
   visibility: visible !important;
 }
 
-.fill-bg {
-  background-color: rgba(250, 250, 250, 1) !important;
+.hidden {
+  opacity:    0;
+  visibility: hidden;
 }
+
 
 /*******************
  Header
