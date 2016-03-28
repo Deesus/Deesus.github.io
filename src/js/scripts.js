@@ -4,13 +4,15 @@ $(document).ready(function() {
      * Initialize variables, functions:
      *************************/
     var menuShown       = false;
-    var $menuContainer  = $('#drop-down-menu');
-    var $menuLinks      = $menuContainer.find('a');
+    var $menuLinks      = $('#drop-down-menu').find('a');
+    var $entirePage     = $('.entire-page');
     function showMenu() {
+        $entirePage.removeClass('hidden');
         $menuLinks.removeClass('hidden');
         menuShown = true;
     }
     function hideMenu() {
+        $entirePage.addClass('hidden');
         $menuLinks.addClass('hidden');
         menuShown = false;
     }
