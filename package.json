@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/Deesus/Deesus.github.io/issues"
   },
-  "homepage": "https://github.com/Deesus/Deesus.github.io#readme",
+  "homepage": "https://github.com/Deesus/Deesus.github.io",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-compass": "^1.1.1",
