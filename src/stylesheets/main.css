@@ -244,11 +244,72 @@ a {
 }
 
 /**************
- Flex utilities:
+ Flex:
  **************/
-.flex-grow {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
+/* expands item relative to other items' flex property */
+.flex-0 {
+  -webkit-flex: 0;
+  flex: 0;
+}
+
+.flex-1 {
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.flex-2 {
+  -webkit-flex: 2;
+  flex: 2;
+}
+
+.flex-3 {
+  -webkit-flex: 3;
+  flex: 3;
+}
+
+.flex-4 {
+  -webkit-flex: 4;
+  flex: 4;
+}
+
+.flex-5 {
+  -webkit-flex: 5;
+  flex: 5;
+}
+
+.flex-6 {
+  -webkit-flex: 6;
+  flex: 6;
+}
+
+.flex-7 {
+  -webkit-flex: 7;
+  flex: 7;
+}
+
+.flex-8 {
+  -webkit-flex: 8;
+  flex: 8;
+}
+
+.flex-9 {
+  -webkit-flex: 9;
+  flex: 9;
+}
+
+.flex-10 {
+  -webkit-flex: 10;
+  flex: 10;
+}
+
+.flex-11 {
+  -webkit-flex: 11;
+  flex: 11;
+}
+
+.flex-12 {
+  -webkit-flex: 12;
+  flex: 12;
 }
 
 @font-face {
@@ -457,29 +518,26 @@ section {
 /*******************
  Hamburger Menu (drop-down menu)
  *******************/
-#drop-down-menu {
-  right: 0;
-  z-index: 99;
+#hamburger-menu {
+  -moz-transition: right 0.25s cubic-bezier(0.25, 0.06, 0.75, 0.95);
+  -o-transition: right 0.25s cubic-bezier(0.25, 0.06, 0.75, 0.95);
+  -webkit-transition: right 0.25s cubic-bezier(0.25, 0.06, 0.75, 0.95);
+  transition: right 0.25s cubic-bezier(0.25, 0.06, 0.75, 0.95);
+  top: 0;
+  height: 100%;
+  width: 20.1rem;
+  max-width: 100%;
   position: fixed;
-  font-size: 2.4rem;
-  text-align: right;
-  text-align: end;
-  background: transparent;
+  z-index: 99;
+  background: #fafafa;
+  border-left: 1px solid #cccccc;
+  padding: 2rem;
+  font-size: 1.3rem;
 }
-#drop-down-menu .triple-bar {
-  padding-right: 2rem;
+#hamburger-menu li {
+  line-height: 2.4rem;
 }
-#drop-down-menu ul {
-  opacity: 1;
-  visibility: visible;
-  text-align: right;
-  text-align: end;
-}
-#drop-down-menu li {
-  padding-right: 2rem;
-  padding-top: 0.3rem;
-}
-#drop-down-menu li a {
+#hamburger-menu li a {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -487,31 +545,38 @@ section {
   color: #54585E;
   width: 100%;
 }
-#drop-down-menu li a:hover {
+#hamburger-menu li a:hover {
   color: #196bac;
 }
 
-/* triple bar menu logo */
-.ion-navicon {
-  color: #54585E;
-  font-size: 3.7rem;
-}
-.ion-navicon::before {
-  margin-top: 0.7rem;
+/* hamburger icon: */
+i.ion-navicon {
+  color: #aaaaaa;
+  font-size: 2.7rem;
 }
 
-/* overlays entire page with white bg: */
-.entire-page {
+i.ion-ios-close-empty {
+  color: #aaaaaa;
+  font-size: 3rem;
+}
+
+.menu-heading {
+  color: #aaaaaa;
+  text-transform: uppercase;
+  margin-bottom: 2.7rem;
+}
+
+/* overlays entire page with black bg: */
+.mask {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background: white;
+  background: black;
+  opacity: .75;
   position: fixed;
-  z-index: 88;
-  min-height: 100%;
+  z-index: 49;
   height: 100%;
-  min-width: 100%;
   width: 100%;
 }
 
@@ -519,6 +584,15 @@ section {
 .hidden {
   opacity: 0;
   visibility: hidden;
+}
+
+/* transition utilities: */
+.menu-visible {
+  right: 0;
+}
+
+.menu-hidden {
+  right: -20.1rem;
 }
 
 /*******************
@@ -685,7 +759,7 @@ footer {
   min-height: 8.5rem;
   height: 8.5rem;
   background: whitesmoke;
-  color: darkgray;
+  color: #aaaaaa;
 }
 footer .container-row {
   min-height: 100%;
@@ -695,7 +769,7 @@ footer a, footer a > i {
   -o-transition: color 0.4s ease;
   -webkit-transition: color 0.4s ease;
   transition: color 0.4s ease;
-  color: darkgray;
+  color: #aaaaaa;
 }
 footer a:hover, footer a > i:hover {
   color: #646464;
@@ -704,7 +778,7 @@ footer a:hover, footer a > i:hover {
 footer a > i {
   font-size: 2.6rem;
   padding: 0 1rem 0 1rem;
-  border: 1px solid darkgray;
+  border: 1px solid #aaaaaa;
   border-radius: 50%;
 }
 

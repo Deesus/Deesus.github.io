@@ -122,8 +122,11 @@
 }
 
 /**************
- Flex utilities:
+ Flex:
  **************/
-.flex-grow {
-  @include flex-grow(1);
+/* expands item relative to other items' flex property */
+@for $i from 0 through 12 {
+  .flex-#{$i} {
+    @include flex($i);
+  }
 }

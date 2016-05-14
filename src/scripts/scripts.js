@@ -4,24 +4,24 @@ $(document).ready(function() {
      * Initialize variables, functions:
      *************************/
     var menuShown       = false;
-    var $menuLinks      = $('#drop-down-menu').find('a');
-    var $entirePage     = $('.entire-page');
+    var $links          = $('a[name=test]');
+    var $menu           = $('#hamburger-menu');
     function showMenu() {
-        $entirePage.removeClass('hidden');
-        $menuLinks.removeClass('hidden');
+        $menu.removeClass('menu-hidden');
+        $menu.addClass('menu-visible');
         menuShown = true;
     }
     function hideMenu() {
-        $entirePage.addClass('hidden');
-        $menuLinks.addClass('hidden');
+        $menu.removeClass('menu-visible');
+        $menu.addClass('menu-hidden');
         menuShown = false;
     }
 
     /*************************
      * Event handlers:
      *************************/
-    // If 'triple-bar' logo is clicked, display/hide menu:
-    $menuLinks.click(function() {
+    // If 'hamburger' logo is clicked, display/hide menu:
+    $links.click(function() {
         if(!menuShown) {
             showMenu();
         }
@@ -32,9 +32,9 @@ $(document).ready(function() {
 
     // Corner case: if menu is shown but user resizes to larger width, we must hide menu:
     // TODO: Derive a non-JS solution for hiding menu icon upon browser resize?
-    $(window).resize(function() {
-        if(window.innerWidth > 540){
-            hideMenu();
-        }
-    });
+    // $(window).resize(function() {
+    //     if(window.innerWidth > 540){
+    //         hideMenu();
+    //     }
+    // });
 });

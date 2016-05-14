@@ -15,6 +15,17 @@
     <!--<link rel="stylesheet" href="dist/stylesheets/styles.min.css">-->
     <link rel="stylesheet" href="./src/stylesheets/main.css">
 
+    <!-- jQuery CDN -->
+    <script defer
+            src="http://code.jquery.com/jquery-2.2.2.min.js"
+            integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
+            crossorigin="anonymous"></script>
+
+    <!-- Custom JS: -->
+    <!-- TODO: ensure you point to minified JS for production: -->
+    <!--<script src="dist/scripts/scripts.min.js"></script>-->
+    <script defer src="./src/scripts/scripts.js"></script>
+
     <!-- Ionic icons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- favicon -->
@@ -23,7 +34,7 @@
 <body>
     <div id="body-wrapper">
         <!-- Overlays entire page: -->
-        <div class="entire-page hidden"></div>
+        <div id="mask" class="hidden"></div>
 
         <!-- ================ MAIN ================ -->
         <main>
@@ -32,7 +43,7 @@
                 <nav class="container-row align-items-center">
                     <div class="col-5"></div>
                     <div class="col-6 text-end">
-                        <a href="#about"><button>about</button></a>
+                        <a href="#" name="test"><button>about</button></a>
                         <a href="#portfolio"><button>portfolio</button></a>
                         <a href="mailto:deesus@yandex.com" target="_blank"><button>contact</button></a>
                     </div>
@@ -40,24 +51,32 @@
                 </nav>
             </header>
             <!-- ================ Hamburger Menu ================ -->
-            <nav id="drop-down-menu">
-                <a class="triple-bar hidden"><i class="ion-navicon"></i></a>
-                <ul class="hidden">
-                    <li><a class="hidden" href="#about">about</a></li>
-                    <li><a class="hidden" href="#portfolio">portfolio</a></li>
-                    <li><a class="hidden" href="mailto:deesus@yandex.com" target="_blank">contact</a></li>
+            <nav id="hamburger-menu" class="menu-hidden">
+                <div class="menu-heading row">
+                    <div class="flex-1">
+                        menu
+                    </div>
+                    <div class="">
+                        <a class="triple-bar"><i class="ion-ios-close-empty"></i></a>
+                    </div>
+                </div> <!-- /.menu-heading.row -->
+
+                <ul>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="mailto:deesus@yandex.com" target="_blank">contact</a></li>
                 </ul>
             </nav>
 
 
             <!-- ================ HOME ================ -->
             <section id="home" class="">
-                <div class="text-center home-title">
+                <div class="text-center home-title flex-1">
                     <h1>Dee Reddy</h1>
                     <h5>Web Developer</h5>
                 </div>
                 <!-- Title -->
-                <div class="row flex-grow justify-center align-items-end">
+                <div class="row justify-center align-items-end">
                     <img src="dist/img/splash_gray.svg" class="splash-image" alt="Stylized image of Dee Reddy">
                 </div> <!-- /.row -->
             </section> <!-- /#home -->
@@ -275,14 +294,6 @@
         </div>
     </footer>
 
-    <!-- jQuery CDN -->
-    <script src="http://code.jquery.com/jquery-2.2.2.min.js"
-            integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
-            crossorigin="anonymous"></script>
 
-    <!-- Custom JS: -->
-    <!-- TODO: ensure you point to minified JS for production: -->
-    <!--<script src="dist/scripts/scripts.min.js"></script>-->
-    <script src="./src/scripts/scripts.scripts"></script>
 </body>
 </html>

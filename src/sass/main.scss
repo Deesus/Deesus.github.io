@@ -15,11 +15,11 @@ $alt-blue:      #196bac;    // or try #259fff
 $link-blue:     deepskyblue;
 $link-hover:    #0FA0CE;
 $selection:     #4fc8de;
-$portfolio-bg:  rgba(250, 250, 250, 1);
+$near-white:    rgba(250, 250, 250, 1);
 $footer-bg:     rgb(245, 245, 245);
 $portfolio-hr:  #dddddd;
-$darkgray:      darkgray;
-$alt-gray:      #9f9f9f;
+$light-gray:    rgba(204, 204, 204, 1);
+$medium-gray:   rgba(170, 170, 170, 1);
 $shadow-gray:   rgba(210, 210, 210, .5);
 $gray:          rgba(100, 100, 100, 1);
 $invis-gray:    rgba(100, 100, 100, 0);
@@ -87,55 +87,58 @@ section {
 /*******************
  Hamburger Menu (drop-down menu)
  *******************/
-#drop-down-menu {
-  right:      0;
-  z-index:    99;
-  position:   fixed;
-  font-size:  2.4rem;
-  text-align: right;      // for IE
-  text-align: end;
-  background: rgba(0, 0, 0, 0);
-  .triple-bar {
-    padding-right:  2rem;
-  }
-  ul {
-    opacity:    1;
-    visibility: visible;
-    text-align: right;    // for IE
-    text-align: end;
-  }
+#hamburger-menu {
+  @include  transition(right 0.25s cubic-bezier(0.25, 0.06, 0.75, 0.95));
+  top:          0;
+  height:       100%;
+  width:        20.1rem;
+  max-width:    100%;
+  position:     fixed;
+  z-index:      99;
+  background:   $near-white;
+  border-left:  1px solid $light-gray;
+  padding:      2rem;
+  font-size:    1.3rem;
+
   li {
-    padding-right:  2rem;
-    padding-top:    0.3rem;
-    a {
-      @include  transition($quick-transition);
-      color:    $text-gray;
-      width:    100%;
-      &:hover {
-        color:  $alt-blue;
-      }
+    line-height: 2.4rem;
+  }
+
+  li a {
+    @include  transition($quick-transition);
+    color:    $text-gray;
+    width:    100%;
+    &:hover {
+      color:  $alt-blue;
     }
   }
 }
 
-/* triple bar menu logo */
-.ion-navicon {
-  color:        $text-gray;
-  font-size:    3.7rem;
-  &::before {
-    margin-top: 0.7rem;
-  }
+/* hamburger icon: */
+i.ion-navicon {
+  color:      $medium-gray;
+  font-size:  2.7rem;
 }
 
-/* overlays entire page with white bg: */
-.entire-page {
+i.ion-ios-close-empty {
+  color:      $medium-gray;
+  font-size:  3rem;
+}
+
+.menu-heading {
+  color:          $medium-gray;
+  text-transform: uppercase;
+  margin-bottom:  2.7rem;
+}
+
+/* overlays entire page with black bg: */
+.mask {
   @include    transition($quick-transition);
-  background: white;
+  background: black;
+  opacity:    .75;
   position:   fixed;
-  z-index:    88;
-  min-height: 100%;
+  z-index:    49;
   height:     100%;
-  min-width:  100%;
   width:      100%;
 }
 
@@ -143,6 +146,15 @@ section {
 .hidden {
   opacity:    0;
   visibility: hidden;
+}
+
+/* transition utilities: */
+.menu-visible {
+  right: 0;
+}
+
+.menu-hidden {
+  right: -20.1rem;        // width of menu
 }
 
 /*******************
@@ -224,7 +236,7 @@ header {
  Portfolio
  *******************/
 #portfolio {
-  background: $portfolio-bg;
+  background: $near-white;
   @include    box-shadow(inset 0 2px 4px 0 $shadow-gray);
 }
 
@@ -303,7 +315,7 @@ footer {
   min-height: 8.5rem;
   height:     8.5rem;
   background: $footer-bg;
-  color:      $darkgray;
+  color:      $medium-gray;
 
   .container-row {
     min-height: 100%;
@@ -311,7 +323,7 @@ footer {
 
   a, a > i {
     @include  transition(color 0.4s ease);
-    color:    $darkgray;
+    color:    $medium-gray;
     &:hover {
       color:        $gray;
       border-color: $gray;
@@ -321,7 +333,7 @@ footer {
   a > i {
     font-size:      2.6rem;
     padding:        0 1rem 0 1rem;
-    border:         1px solid $darkgray;
+    border:         1px solid $medium-gray;
     border-radius:  50%;
   }
 }
