@@ -255,19 +255,19 @@ a {
   font-family: 'OpenSans';
   font-style: normal;
   font-weight: 400;
-  src: url("../../public/assets/OpenSans-Reg.woff");
+  src: url("../../dist/assets/OpenSans-Reg.woff");
 }
 @font-face {
   font-family: 'OpenSans';
   font-style: normal;
   font-weight: 300;
-  src: url("../../public/assets/OpenSans-Light.woff");
+  src: url("../../dist/assets/OpenSans-Light.woff");
 }
 @font-face {
   font-family: 'OpenSans';
   font-style: normal;
   font-weight: 600;
-  src: url("../../public/assets/OpenSans-Bold.woff");
+  src: url("../../dist/assets/OpenSans-Bold.woff");
 }
 /**************
  Typography:
