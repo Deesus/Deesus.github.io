@@ -455,7 +455,7 @@ section {
 }
 
 /*******************
- Adaptive Menu (drop-down menu)
+ Hamburger Menu (drop-down menu)
  *******************/
 #drop-down-menu {
   right: 0;
@@ -716,6 +716,10 @@ footer a > i {
   height: 0;
   border-top: 1px #dddddd solid;
   border-bottom: 1px white solid;
+}
+
+.debug {
+  border: 2px dotted red;
 }
 
 /*******************

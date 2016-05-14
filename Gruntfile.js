@@ -1,3 +1,8 @@
+/**
+ * 1) Run `$ grunt` in terminal -- this will create minified resources and copy original (unminified) files from `src` to `dist`
+ * 2) In `index.html` make sure the HTML points to the minified resources
+ */
+
 module.exports = function (grunt) {
     // Task configuration:
     grunt.initConfig({
@@ -19,7 +24,7 @@ module.exports = function (grunt) {
                     expand: true,
                     flatten: true,
                     src: ['src/stylesheets/*.css'],
-                    dest: 'src/stylesheets',
+                    dest: 'dist/stylesheets',
                     ext: '.min.css'
                 }]
             }
@@ -28,7 +33,7 @@ module.exports = function (grunt) {
         // minify JS:
         uglify: {
             my_target: {
-                files: {'src/scripts/scripts.min.js' : 'src/scripts/*.js'}
+                files: {'dist/scripts/scripts.min.js' : 'src/scripts/*.js'}
             }
         }
     });
