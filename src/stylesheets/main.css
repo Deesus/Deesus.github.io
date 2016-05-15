@@ -549,12 +549,7 @@ section {
   color: #196bac;
 }
 
-/* hamburger icon: */
-i.ion-navicon {
-  color: #aaaaaa;
-  font-size: 2.7rem;
-}
-
+/* close icon */
 i.ion-ios-close-empty {
   color: #aaaaaa;
   font-size: 3rem;
@@ -580,12 +575,6 @@ i.ion-ios-close-empty {
   width: 100%;
 }
 
-/* hide utility: */
-.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
 /* transition utilities: */
 .menu-visible {
   right: 0;
@@ -600,18 +589,38 @@ i.ion-ios-close-empty {
  *******************/
 header {
   width: 100%;
-  height: 5rem;
+  height: 5.5rem;
   background: white;
 }
 header a {
   text-transform: uppercase;
 }
-header nav {
+header nav, header ul {
   height: 100%;
+}
+header li {
+  display: inline-block;
+  padding-right: 1.2rem;
 }
 header button {
   margin: 0;
   color: #646464;
+}
+
+/* hamburger icon: */
+.hamburger-icon a {
+  font-size: 3rem;
+  color: #646464;
+  padding: 0 0.8rem;
+  border-radius: 5px;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.hamburger-icon a:hover {
+  background: #646464;
+  color: ghostwhite;
 }
 
 /*******************
@@ -625,7 +634,7 @@ header button {
   order: 1;
   padding-bottom: 0;
   overflow: hidden;
-  height: calc(100vh - 5rem - 1px);
+  height: calc(100vh - 5.5rem - 1px);
 }
 
 .home-title {
@@ -794,6 +803,11 @@ footer a > i {
 
 .debug {
   border: 2px dotted red;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /*******************

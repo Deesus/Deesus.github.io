@@ -4,9 +4,10 @@ $(document).ready(function() {
      * Initialize variables, functions:
      *************************/
     var menuShown       = false;
-    var $links          = $('a[name=test]');
+    var $links          = $('.hamburger-icon a');
     var $menu           = $('#hamburger-menu');
     function showMenu() {
+        // TODO: change to 'toggle' method:
         $menu.removeClass('menu-hidden');
         $menu.addClass('menu-visible');
         menuShown = true;
@@ -21,7 +22,8 @@ $(document).ready(function() {
      * Event handlers:
      *************************/
     // If 'hamburger' logo is clicked, display/hide menu:
-    $links.click(function() {
+    $links.click(function(event) {
+        event.preventDefault();
         if(!menuShown) {
             showMenu();
         }
@@ -29,12 +31,4 @@ $(document).ready(function() {
             hideMenu();
         }
     });
-
-    // Corner case: if menu is shown but user resizes to larger width, we must hide menu:
-    // TODO: Derive a non-JS solution for hiding menu icon upon browser resize?
-    // $(window).resize(function() {
-    //     if(window.innerWidth > 540){
-    //         hideMenu();
-    //     }
-    // });
 });

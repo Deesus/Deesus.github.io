@@ -26,7 +26,7 @@ $invis-gray:    rgba(100, 100, 100, 0);
 $black:         rgba(34, 34, 34, 1);    // same as #222
 
 $section-padding:   0.9%;
-$header-height:     5rem;
+$header-height:     5.5rem;
 $common-transition: all 0.5s ease;
 $quick-transition:  all 0.3s ease;
 /////////////////////////////////////////////////////////////////////////////////
@@ -114,12 +114,7 @@ section {
   }
 }
 
-/* hamburger icon: */
-i.ion-navicon {
-  color:      $medium-gray;
-  font-size:  2.7rem;
-}
-
+/* close icon */
 i.ion-ios-close-empty {
   color:      $medium-gray;
   font-size:  3rem;
@@ -142,11 +137,6 @@ i.ion-ios-close-empty {
   width:      100%;
 }
 
-/* hide utility: */
-.hidden {
-  opacity:    0;
-  visibility: hidden;
-}
 
 /* transition utilities: */
 .menu-visible {
@@ -168,12 +158,36 @@ header {
   a {
     text-transform: uppercase;
   }
-  nav {
+
+  nav, ul {
     height: 100%;
   }
+
+  li {
+    display:        inline-block;
+    padding-right:  1.2rem;
+  }
+
   button {
     margin: 0;
     color:  $gray;
+  }
+}
+
+/* hamburger icon: */
+.hamburger-icon {
+  //display: none;
+  a {
+    font-size:      3rem;
+    color:          $gray;
+    padding:        0 0.8rem;
+    border-radius:  5px;
+    @include transition(all 0.1s linear);
+
+    &:hover {
+      background: $gray;
+      color:      ghostwhite;
+    }
   }
 }
 
@@ -354,6 +368,10 @@ footer {
   border: 2px dotted red;
 }
 
+.hidden {
+  opacity:    0;
+  visibility: hidden;
+}
 /*******************
  Media queries
  *******************/
