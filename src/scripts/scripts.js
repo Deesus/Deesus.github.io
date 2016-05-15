@@ -4,7 +4,7 @@ $(document).ready(function() {
      * Initialize variables, functions:
      *************************/
     var menuShown       = false;
-    var $links          = $('.hamburger-icon a');
+    var $links          = $('.hamburger-icon, #hamburger-menu a, .ion-ios-close-empty');
     var $menu           = $('#hamburger-menu');
     function showMenu() {
         // TODO: change to 'toggle' method:
@@ -23,7 +23,6 @@ $(document).ready(function() {
      *************************/
     // If 'hamburger' logo is clicked, display/hide menu:
     $links.click(function(event) {
-        event.preventDefault();
         if(!menuShown) {
             showMenu();
         }

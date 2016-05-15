@@ -118,6 +118,10 @@ section {
 i.ion-ios-close-empty {
   color:      $medium-gray;
   font-size:  3rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .menu-heading {
@@ -177,17 +181,16 @@ header {
 /* hamburger icon: */
 .hamburger-icon {
   //display: none;
-  a {
-    font-size:      3rem;
-    color:          $gray;
-    padding:        0 0.8rem;
-    border-radius:  5px;
-    @include transition(all 0.1s linear);
+  font-size:      3rem;
+  color:          $gray;
+  padding:        0 0.8rem;
+  border-radius:  5px;
+  @include transition(all 0.1s linear);
 
-    &:hover {
-      background: $gray;
-      color:      ghostwhite;
-    }
+  &:hover {
+    background: $gray;
+    color:      ghostwhite;
+    cursor:     pointer;
   }
 }
 
