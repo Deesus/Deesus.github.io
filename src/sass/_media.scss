@@ -139,10 +139,11 @@ $alt-blue:      #196bac;
 */
 @media screen and (max-width: 540px) {
   header {
-    display: none;
-  }
-  .triple-bar {
-    opacity:    1 !important;
-    visibility: visible !important;
+    li:not(.hamburger-icon) {
+      display: none;
+    }
+    .hamburger-icon {
+      display: block;
+    }
   }
 }

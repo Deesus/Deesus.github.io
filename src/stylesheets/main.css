@@ -612,6 +612,7 @@ header button {
 
 /* hamburger icon: */
 .hamburger-icon {
+  display: none;
   font-size: 3rem;
   color: #646464;
   padding: 0 0.8rem;
@@ -942,12 +943,10 @@ footer a > i {
   Header section:
 */
 @media screen and (max-width: 540px) {
-  header {
+  header li:not(.hamburger-icon) {
     display: none;
   }
-
-  .triple-bar {
-    opacity: 1 !important;
-    visibility: visible !important;
+  header .hamburger-icon {
+    display: block;
   }
 }
