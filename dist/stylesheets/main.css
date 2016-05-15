@@ -244,11 +244,72 @@ a {
 }
 
 /**************
- Flex utilities:
+ Flex:
  **************/
-.flex-grow {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
+/* expands item relative to other items' flex property */
+.flex-0 {
+  -webkit-flex: 0;
+  flex: 0;
+}
+
+.flex-1 {
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.flex-2 {
+  -webkit-flex: 2;
+  flex: 2;
+}
+
+.flex-3 {
+  -webkit-flex: 3;
+  flex: 3;
+}
+
+.flex-4 {
+  -webkit-flex: 4;
+  flex: 4;
+}
+
+.flex-5 {
+  -webkit-flex: 5;
+  flex: 5;
+}
+
+.flex-6 {
+  -webkit-flex: 6;
+  flex: 6;
+}
+
+.flex-7 {
+  -webkit-flex: 7;
+  flex: 7;
+}
+
+.flex-8 {
+  -webkit-flex: 8;
+  flex: 8;
+}
+
+.flex-9 {
+  -webkit-flex: 9;
+  flex: 9;
+}
+
+.flex-10 {
+  -webkit-flex: 10;
+  flex: 10;
+}
+
+.flex-11 {
+  -webkit-flex: 11;
+  flex: 11;
+}
+
+.flex-12 {
+  -webkit-flex: 12;
+  flex: 12;
 }
 
 @font-face {
@@ -455,31 +516,28 @@ section {
 }
 
 /*******************
- Adaptive Menu (drop-down menu)
+ Hamburger Menu (drop-down menu)
  *******************/
-#drop-down-menu {
-  right: 0;
-  z-index: 99;
+#hamburger-menu {
+  -moz-transition: right 0.25s cubic-bezier(0.25, 0.06, 0.75, 0.95);
+  -o-transition: right 0.25s cubic-bezier(0.25, 0.06, 0.75, 0.95);
+  -webkit-transition: right 0.25s cubic-bezier(0.25, 0.06, 0.75, 0.95);
+  transition: right 0.25s cubic-bezier(0.25, 0.06, 0.75, 0.95);
+  top: 0;
+  height: 100%;
+  width: 20.1rem;
+  max-width: 100%;
   position: fixed;
-  font-size: 2.4rem;
-  text-align: right;
-  text-align: end;
-  background: transparent;
+  z-index: 99;
+  background: #fafafa;
+  border-left: 1px solid #cccccc;
+  padding: 2rem;
+  font-size: 1.3rem;
 }
-#drop-down-menu .triple-bar {
-  padding-right: 2rem;
+#hamburger-menu li {
+  line-height: 2.4rem;
 }
-#drop-down-menu ul {
-  opacity: 1;
-  visibility: visible;
-  text-align: right;
-  text-align: end;
-}
-#drop-down-menu li {
-  padding-right: 2rem;
-  padding-top: 0.3rem;
-}
-#drop-down-menu li a {
+#hamburger-menu li a {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
@@ -487,38 +545,46 @@ section {
   color: #54585E;
   width: 100%;
 }
-#drop-down-menu li a:hover {
+#hamburger-menu li a:hover {
   color: #196bac;
 }
 
-/* triple bar menu logo */
-.ion-navicon {
-  color: #54585E;
-  font-size: 3.7rem;
+/* close icon */
+i.ion-ios-close-empty {
+  color: #aaaaaa;
+  font-size: 3rem;
 }
-.ion-navicon::before {
-  margin-top: 0.7rem;
+i.ion-ios-close-empty:hover {
+  cursor: pointer;
 }
 
-/* overlays entire page with white bg: */
-.entire-page {
+.menu-heading {
+  color: #aaaaaa;
+  text-transform: uppercase;
+  margin-bottom: 2.7rem;
+}
+
+/* overlays entire page with black bg: */
+.mask {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background: white;
+  background: black;
+  opacity: .75;
   position: fixed;
-  z-index: 88;
-  min-height: 100%;
+  z-index: 49;
   height: 100%;
-  min-width: 100%;
   width: 100%;
 }
 
-/* hide utility: */
-.hidden {
-  opacity: 0;
-  visibility: hidden;
+/* transition utilities: */
+.menu-visible {
+  right: 0;
+}
+
+.menu-hidden {
+  right: -20.1rem;
 }
 
 /*******************
@@ -526,18 +592,40 @@ section {
  *******************/
 header {
   width: 100%;
-  height: 5rem;
+  height: 5.5rem;
   background: white;
 }
 header a {
   text-transform: uppercase;
 }
-header nav {
+header nav, header ul {
   height: 100%;
+}
+header li {
+  display: inline-block;
+  padding-right: 1.2rem;
 }
 header button {
   margin: 0;
   color: #646464;
+}
+
+/* hamburger icon: */
+.hamburger-icon {
+  display: none;
+  font-size: 3rem;
+  color: #646464;
+  padding: 0 0.8rem;
+  border-radius: 5px;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.hamburger-icon:hover {
+  background: #646464;
+  color: ghostwhite;
+  cursor: pointer;
 }
 
 /*******************
@@ -551,7 +639,7 @@ header button {
   order: 1;
   padding-bottom: 0;
   overflow: hidden;
-  height: calc(100vh - 5rem - 1px);
+  height: calc(100vh - 5.5rem - 1px);
 }
 
 .home-title {
@@ -685,7 +773,7 @@ footer {
   min-height: 8.5rem;
   height: 8.5rem;
   background: whitesmoke;
-  color: darkgray;
+  color: #aaaaaa;
 }
 footer .container-row {
   min-height: 100%;
@@ -695,7 +783,7 @@ footer a, footer a > i {
   -o-transition: color 0.4s ease;
   -webkit-transition: color 0.4s ease;
   transition: color 0.4s ease;
-  color: darkgray;
+  color: #aaaaaa;
 }
 footer a:hover, footer a > i:hover {
   color: #646464;
@@ -704,7 +792,7 @@ footer a:hover, footer a > i:hover {
 footer a > i {
   font-size: 2.6rem;
   padding: 0 1rem 0 1rem;
-  border: 1px solid darkgray;
+  border: 1px solid #aaaaaa;
   border-radius: 50%;
 }
 
@@ -716,6 +804,15 @@ footer a > i {
   height: 0;
   border-top: 1px #dddddd solid;
   border-bottom: 1px white solid;
+}
+
+.debug {
+  border: 2px dotted red;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /*******************
@@ -846,12 +943,10 @@ footer a > i {
   Header section:
 */
 @media screen and (max-width: 540px) {
-  header {
+  header li:not(.hamburger-icon) {
     display: none;
   }
-
-  .triple-bar {
-    opacity: 1 !important;
-    visibility: visible !important;
+  header .hamburger-icon {
+    display: block;
   }
 }
