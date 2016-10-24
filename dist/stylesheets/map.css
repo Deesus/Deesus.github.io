@@ -1,0 +1,9 @@
+/* Map container: */
+#here-map,
+#google-map
+{
+    /* 500px by 400px: */
+    width:  60rem;
+    height: 50rem;
+    margin: auto;
+}
