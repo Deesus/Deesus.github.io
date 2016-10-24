@@ -44,8 +44,8 @@ window.MAPPING  = (function () {
             base:       'base',
             type:       'maptile',
             scheme:     'pedestrian.day',
-            app_id:     'LYBuzdgM3acdB6lQ3di3',       /// add your app id here
-            app_code:   '6KqoxqRAamfrWU2GrlK4DQ',     /// add your app code here
+            app_id:     'LYBuzdgM3acdB6lQ3di3',       /// add your app id here (probably don't want to expose app_id to client?)
+            app_code:   '6KqoxqRAamfrWU2GrlK4DQ',     /// add your app code here (probably don't want to expose app_code to client?)
             mapID:      'newest',
             maxZoom:    20,
             language:   'eng',
@@ -73,6 +73,9 @@ window.MAPPING  = (function () {
     /// -----------------------------------------------------
     /// Now for Google Maps:
     /// -----------------------------------------------------
+    /// api key = AIzaSyBtLo3CxrnagWBK7OUxEQfzNFB1yyEyHU4
+    ///           AIzaSyC2j9HAN_XFDNoYsmOEpRlUfIMa-VdEbfU
+
 
 })();
 
