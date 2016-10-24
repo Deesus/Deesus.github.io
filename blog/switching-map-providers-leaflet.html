@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <title>Dee Reddy</title>
+    <meta name="description" content="Dee Reddy Portfolio">
+    <meta name="keywords" content="Dee, Reddy, Dee Reddy, Deepankara Reddy">
+    <meta name="author" content="Dee Reddy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Styles: -->
+    <!-- TODO: make sure you point to minified CSS for production: -->
+    <link rel="stylesheet" href="../dist/stylesheets/main.min.css">
+    <link rel="stylesheet" href="../dist/stylesheets/map.css">
+
+    <!-- Ionic icons -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../dist/img/icon.ico">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+
+    <!-- Custom JS: -->
+    <!-- TODO: ensure you point to minified JS for production: -->
+    <script defer src="../dist/scripts/scripts.min.js"></script>
+</head>
+<body>
+
+    <main class="container">
+        <!-- =============== HERE MAP =============== -->
+        <section id="here-map-section">
+            <!-- Section Title -->
+            <div class="title row margin-center">
+                <div class="col-4">
+                    <div class="div-line"></div>
+                </div>
+                <div class="col-4 text-center">
+                    <h3>Basic HERE Map:</h3>
+                </div>
+                <div class="col-4">
+                    <div class="div-line"></div>
+                </div>
+            </div> <!-- /.title.row -->
+
+            <!-- ☯☯☯☯☯☯ MAP ☯☯☯☯☯☯ -->
+            <div id="here-map" class="margin-center"></div>
+        </section> <!-- /HERE map -->
+
+        <!-- =============== Google MAP =============== -->
+        <section id="google-map-section">
+            <!-- Section Title -->
+            <div class="title row margin-center">
+                <div class="col-4">
+                    <div class="div-line"></div>
+                </div>
+                <div class="col-4 text-center">
+                    <h3>Basic Google Map:</h3>
+                </div>
+                <div class="col-4">
+                    <div class="div-line"></div>
+                </div>
+            </div> <!-- /.title.row -->
+
+            <!-- ☯☯☯☯☯☯ MAP ☯☯☯☯☯☯ -->
+            <div id="google-map" class="margin-center"></div>
+        </section> <!-- /Google map -->
+
+    </main> <!-- /.container -->
+</body>
+</html>
