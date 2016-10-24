@@ -18,21 +18,19 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="../dist/img/icon.ico">
 
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA40OTss26xMH1RD5iXxFFCK5aHEGEhwUY" async defer></script>
+
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 
+    <!-- Leaftlet Plugin: Google Mutant -->
+    <script src='https://unpkg.com/leaflet.gridlayer.googlemutant@latest/Leaflet.GoogleMutant.js' defer></script>
+
     <!-- Custom JS: -->
     <!-- TODO: ensure you point to minified JS for production: -->
     <script defer src="../dist/scripts/scripts.min.js"></script>
-
-    <style>
-        #map {
-            width: 60rem;
-            height: 50rem;
-            margin: 0 auto;
-        }
-    </style>
 </head>
 <body>
 
@@ -74,31 +72,8 @@
             <!-- ☯☯☯☯☯☯ MAP ☯☯☯☯☯☯ -->
             <!--<div id="google-map" class="margin-center"></div>-->
 
-            <div id="map"></div>
-            <script>
-                function initMap() {
-                    var uluru = {lat: -25.363, lng: 131.044};
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 4,
-                        center: uluru
-                    });
-                    var marker = new google.maps.Marker({
-                        position: uluru,
-                        map: map
-                    });
-                }
-
-            </script>
-
-            <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-            </script>
-
-
+            <div id="google-map"></div>
         </section> <!-- /Google map -->
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtLo3CxrnagWBK7OUxEQfzNFB1yyEyHU4&callback=initMap">
-        </script>
 
     </main> <!-- /.container -->
 </body>

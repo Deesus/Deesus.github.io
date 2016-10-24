@@ -35,7 +35,7 @@ window.MAPPING  = (function () {
     hereMap = L.map('here-map') /// Set id selector of map
                .setView([X_COORD, Y_COORD], zoomLevel);
 
-    /// Set Leaflet URL template c.f. <https://developer.here.com/news/201602172>
+    /// Set Leaflet URL template for HERE Maps c.f. <https://developer.here.com/news/201602172>
     L.tileLayer(
         'http://{s}.{base}.maps.cit.api.here.com/maptile/2.1/{type}/{mapID}/{scheme}/{z}/{x}/{y}/{size}/{format}?app_id={app_id}&app_code={app_code}&lg={language}',
         {
@@ -44,8 +44,8 @@ window.MAPPING  = (function () {
             base:       'base',
             type:       'maptile',
             scheme:     'pedestrian.day',
-            app_id:     'LYBuzdgM3acdB6lQ3di3',       /// add your app id here (probably don't want to expose app_id to client?)
-            app_code:   '6KqoxqRAamfrWU2GrlK4DQ',     /// add your app code here (probably don't want to expose app_code to client?)
+            app_id:     'LYBuzdgM3acdB6lQ3di3',       /// add your app id here (do we want to expose app_id to client?)
+            app_code:   '6KqoxqRAamfrWU2GrlK4DQ',     /// add your app code here (do we want to expose app_code to client?)
             mapID:      'newest',
             maxZoom:    20,
             language:   'eng',
@@ -73,9 +73,25 @@ window.MAPPING  = (function () {
     /// -----------------------------------------------------
     /// Now for Google Maps:
     /// -----------------------------------------------------
-    /// api key = AIzaSyBtLo3CxrnagWBK7OUxEQfzNFB1yyEyHU4
-    ///           AIzaSyC2j9HAN_XFDNoYsmOEpRlUfIMa-VdEbfU
+    /// api key = AIzaSyA40OTss26xMH1RD5iXxFFCK5aHEGEhwUY
+  
+    /// Initialize map:
+    googleMap = L.map('google-map')
+                 .setView([X_COORD, Y_COORD], zoomLevel);
 
+    /// Notice I'm using a Leaflet plugin: Google Mutant <https://gitlab.com/IvanSanchez/Leaflet.GridLayer.GoogleMutant>
+    L.gridLayer.googleMutant({
+        type:         'roadmap',        /// valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
+        attribution:  false
+    }).addTo(googleMap);
 
+    /// Create pin (notice the API is same as for HERE):
+    L.marker([X_COORD, Y_COORD], zoomLevel
+    ).addTo(googleMap);
+
+    L.circle(
+      [X_COORD, Y_COORD],     /// set center
+      circleStyle             /// we passed our pre-defined circle styles
+    ).addTo(googleMap);
 })();
 
