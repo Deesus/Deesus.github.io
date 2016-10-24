@@ -17,7 +17,6 @@ window.MAPPING  = (function () {
     zoomLevel   = 13;
 
     /// If we want the same circle size/styles, we can just define them upfront:
-    /// N.b. we could also have created a circle object (c.f. Google Maps example below)
     circleStyle = {
         stroke:     false,      /// disables perimeter
         fillColor:  '#006AFF',  /// color of sector (i.e. entire area)
@@ -59,7 +58,7 @@ window.MAPPING  = (function () {
     /// -----------------------------------------------------
 
     /// Create a new pin (Leaflet refers to pins as "marker") (in this case, at the same location as map initialization coordinates):
-    L.marker([X_COORD, Y_COORD], zoomLevel
+    L.marker([X_COORD, Y_COORD]
     ).addTo(hereMap);
     
     /// Create a Circle (once again, on the same coordinates as before):
@@ -69,29 +68,29 @@ window.MAPPING  = (function () {
         circleStyle             /// we passed our pre-defined circle styles
     ).addTo(hereMap);
 
-
     /// -----------------------------------------------------
     /// Now for Google Maps:
     /// -----------------------------------------------------
     /// api key = AIzaSyA40OTss26xMH1RD5iXxFFCK5aHEGEhwUY
-  
+
     /// Initialize map:
     googleMap = L.map('google-map')
                  .setView([X_COORD, Y_COORD], zoomLevel);
 
     /// Notice I'm using a Leaflet plugin: Google Mutant <https://gitlab.com/IvanSanchez/Leaflet.GridLayer.GoogleMutant>
+    /// Also c.f. the style properties that can be passed: <https://developers.google.com/maps/documentation/javascript/styling>
     L.gridLayer.googleMutant({
-        type:         'roadmap',        /// valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
-        attribution:  false
+        type:   'roadmap'        /// valid values are 'roadmap', 'satellite', 'terrain' and 'hybrid'
     }).addTo(googleMap);
 
     /// Create pin (notice the API is same as for HERE):
-    L.marker([X_COORD, Y_COORD], zoomLevel
+    L.marker([X_COORD, Y_COORD]
     ).addTo(googleMap);
 
+    /// We could do the same thing for circles, i.e. copy/paste code from HERE example:
     L.circle(
-      [X_COORD, Y_COORD],     /// set center
-      circleStyle             /// we passed our pre-defined circle styles
+        [X_COORD, Y_COORD],
+        circleStyle
     ).addTo(googleMap);
 })();
 
