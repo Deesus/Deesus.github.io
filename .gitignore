@@ -4,3 +4,4 @@ node_modules/
 placeholder_*
 src/backup/
 TODO.md
+.directory
