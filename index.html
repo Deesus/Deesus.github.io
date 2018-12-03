@@ -11,31 +11,297 @@
     <meta charset="UTF-8">
 
     <!-- Styles: -->
+    <!-- TODO: make sure you point to minified CSS for production: -->
     <link rel="stylesheet" href="dist/stylesheets/main.min.css">
-    
-    <style>
-        body {
-            min-height: 100vh;
-        }
-        .under-contruction {
-            display: flex;
-            align-items: center;
-            margin: auto;
-        }
-    </style>
+    <!--<link rel="stylesheet" href="./src/stylesheets/main.css">-->
 
     <!-- jQuery CDN -->
     <script defer
             src="http://code.jquery.com/jquery-2.2.2.min.js"
             integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
             crossorigin="anonymous"></script>
-            
+
+    <!-- Custom JS: -->
+    <!-- TODO: ensure you point to minified JS for production: -->
+    <script defer src="dist/scripts/scripts.min.js"></script>
+    <!--<script defer src="./src/scripts/scripts.js"></script>-->
+
+    <!-- Ionic icons -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="dist/img/icon.ico">
 </head>
 <body>
-    <div id="body-wrapper" class="under-contruction">
-        Under Construction...
-    </div>
+    <div id="body-wrapper">
+        <!-- Overlays entire page: -->
+        <div id="mask" class="hidden"></div>
+
+        <!-- ================ MAIN ================ -->
+        <main>
+            <!-- ================ HEADER ================ -->
+            <header id="header" class="container">
+                <nav class="">
+                    <ul class="row align-items-center justify-end">
+                        <li>
+                            <a href="#about"><button>about</button></a>
+                        </li>
+                        <li>
+                            <a href="#portfolio"><button>portfolio</button></a>
+                        </li>
+                        <li>
+                            <a href="mailto:deesus@yandex.com" target="_blank"><button>contact</button></a>
+                        </li>
+                        <li class="hamburger-icon row justify-content-center">
+                            <i class="ion-navicon"></i>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- ================ Hamburger Menu ================ -->
+            <nav id="hamburger-menu" class="menu-hidden">
+                <div class="menu-heading row">
+                    <div class="flex-1">
+                        menu
+                    </div>
+                    <div class="">
+                        <i class="ion-ios-close-empty"></i>
+                    </div>
+                </div> <!-- /.menu-heading.row -->
+
+                <ul>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="mailto:deesus@yandex.com" target="_blank">contact</a></li>
+                </ul>
+            </nav>
+
+
+            <!-- ================ HOME ================ -->
+            <section id="home" class="">
+                <div class="text-center home-title flex-1">
+                    <h1>Dee Reddy</h1>
+                    <h5>Web Developer</h5>
+                </div>
+                <!-- Title -->
+                <div class="row justify-center align-items-end">
+                    <img src="dist/img/splash_gray.svg" class="splash-image" alt="Stylized image of Dee Reddy">
+                </div> <!-- /.row -->
+            </section> <!-- /#home -->
+
+            <!-- ================ ABOUT ================ -->
+            <section id="about" class="">
+                <!-- line -->
+                <div class="row justify-center">
+                    <hr class="about-hr">
+                </div> <!-- row -->
+
+                <!-- Title -->
+                <div class="row title" style="height: 4rem;">
+                    <div class="col-12 text-center">
+                        <h3>About</h3>
+                    </div>
+                </div> <!-- /.row -->
+
+                <!-- About List -->
+                <div id="about-list">
+
+                    <div class="about-li row">
+                        <div class="col-5 flex-row justify-end">
+                            <figure>
+                                <img src="dist/img/sitting_200.svg" alt="Man working on computer">
+                            </figure>
+                        </div>
+                        <div class="col-4">
+                            <p>
+                                Hi, my name is Dee Reddy. I'm a self-taught developer, currently residing in the Virginia/Maryland area.
+                                I'm a voracious learner -- whether that's <span>reading about algorithm design or ancient philosophy,</span>
+                                I am always looking to expand my understanding.
+                            </p>
+                            <div class="skill-icons">
+                                <!-- N.b. we need to place `data` attr in `span` because placing `content` using
+                                 `::before` means we retain styles (esp. line height) rather than `i` styles -->
+                                <i class="ion-code-working"></i>    <span data-skill="Programmer"></span>
+                                <i class="ion-clipboard"></i>       <span data-skill="Writer"></span>
+                            </div>
+                        </div>
+                    </div> <!-- /.about-li -->
+                    <div class="about-li row">
+                        <div class="col-5 flex-row justify-end">
+                            <figure>
+                                <img src="dist/img/code_laptop_200.svg" alt="Code on a laptop">
+                            </figure>
+                        </div>
+                        <div class="col-4">
+                            <p>
+                                My primary languages are Python and JavaScript. I develop on both front-end and server-side.
+                                I develop web apps with either Node/Express or the Python-based Flask framework.
+                                I'm also experienced in SQL and RDBMS.
+                            </p>
+                            <div class="skill-icons">
+                                <i class="ion-social-python" data-skill="Python"></i>   <span data-skill="Python"></span>
+                                <i class="ion-social-nodejs" data-skill="Node.js"></i>  <span data-skill="Node.js"></span>
+                                <i class="ion-social-buffer" data-skill="SQL"></i>      <span data-skill="SQL"></span>
+                            </div>
+                        </div>
+                    </div> <!-- /.about-li -->
+
+                    <div class="about-li row">
+                        <div class="col-5 flex-row justify-end">
+                            <figure>
+                                <img src="dist/img/devices_200_blue.svg" alt="Different devices screens: desktop and mobile">
+                            </figure>
+                        </div>
+                        <div class="col-4">
+                            <p>
+                                I develop responsive designs that work on all devices by using the latest HTML5 and CSS standards.
+                                As such, I prefer to find front-end solutions with CSS before relying on JS/jQuery.
+                                My approach is: plan, define, design, refine, and then deploy.
+                            </p>
+                            <div class="skill-icons">
+                                <i class="ion-social-html5"></i>        <span data-skill="HTML5"></span>
+                                <i class="ion-social-sass"></i>         <span data-skill="CSS/Sass"></span>
+                                <i class="ion-social-javascript"></i>   <span data-skill="JavaScript"></span>
+                            </div>
+                        </div>
+                    </div> <!-- /.about-li -->
+
+                </div> <!-- #/about-list -->
+            </section> <!-- /#about -->
+
+            <!-- ================ PORTFOLIO ================ -->
+            <section id="portfolio" class="">
+                <!-- Title -->
+                <div class="row auto-margin title portfolio-title">
+                    <div class="col-4">
+                        <div class="div-line"></div>
+                    </div>
+                    <div class="col-4 text-center">
+                        <h3>Some of my Works</h3>
+                    </div>
+                    <div class="col-4">
+                        <div class="div-line"></div>
+                    </div>
+                </div> <!-- /.row -->
+
+                <!-- Portfolio Tiles -->
+                <!-- portfolio-row -->
+                <div class="portfolio-row auto-margin">
+                    <a href="dist/img/portfolio/image_sharing_1.png" target="_blank">
+                        <figure>
+                            <img src="dist/img/thumbnails/image_sharing_thumb.png" alt="Portfolio preview: Image Sharing app">
+                            <figcaption>
+                                <h4>
+                                    Image Sharing App
+                                </h4>
+                                <p>
+                                    UI; Flask back-end; SQL Database
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </a>
+
+                    <a href="dist/img/portfolio/aiai.png" target="_blank">
+                        <figure>
+                            <img src="dist/img/thumbnails/aiai_thumb.png" alt="Portfolio preview: AIAI website">
+                            <figcaption>
+                                <h4>
+                                    AIAI
+                                </h4>
+                                <p>
+                                    Website Revision
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </a>
+
+                    <a href="dist/img/portfolio/couch.png" target="_blank">
+                        <figure>
+                            <img src="dist/img/thumbnails/couch_thumb.png" alt="Portfolio preview: COUCH website">
+                            <figcaption>
+                                <h4>
+                                    COUCH
+                                </h4>
+                                <p>
+                                    Website
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div> <!-- /.portfolio-row -->
+
+                <!-- portfolio-row -->
+                <div class="portfolio-row auto-margin">
+                    <a href="dist/img/portfolio/iron_post.png" target="_blank">
+                        <figure>
+                            <img src="dist/img/thumbnails/iron_post_thumb.png" alt="Portfolio preview: Iron Post website">
+                            <figcaption>
+                                <h4>
+                                    Iron Post
+                                </h4>
+                                <p>
+                                    Website
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="dist/img/portfolio/conference_central.png" target="_blank">
+                        <figure>
+                            <img src="dist/img/thumbnails/cc_thumb.png" alt="Portfolio preview: Conference central app">
+                            <figcaption>
+                                <h4>
+                                    Conference Central
+                                </h4>
+                                <p>
+                                    Back-end; Google App Engine
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="dist/img/portfolio/swiss_tournament.png" target="_blank">
+                        <figure>
+                            <img src="dist/img/thumbnails/swiss_tournament_thumb.png" alt="Portfolio preview: Swiss Tournament scheduler">
+                            <figcaption>
+                                <h4>
+                                    Swiss Tournament Planner
+                                </h4>
+                                <p>
+                                    SQL Database
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div> <!-- /.portfolio-row -->
+            </section> <!-- /#portfolio -->
+
+
+        </main>
+
+    </div> <!-- /#boddy-wrapper -->
+    <!-- ================ FOOTER ================ -->
+
+    <footer id="footer">
+        <div class="row align-items-center full-height">
+            <div class="col-1"></div>
+            <div class="col-4" data-footer="&copy; 2016 Dee Reddy">&copy; 2016 Dee Reddy</div>
+            <div class="col-6 text-end social-container">
+                <!-- TODO: replace `;nbsp` with padding/maring -->
+                <a href="mailto:deesus@yandex.com" target="_blank">
+                    <i class="ion-ios-email-outline"></i>
+                </a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="https://www.linkedin.com/in/deesus" target="_blank">
+                    <i class="ion-social-linkedin-outline"></i>
+                </a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="https://github.com/deesus" target="_blank">
+                    <i class="ion-social-octocat"></i>
+                </a>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </footer>
+
+
 </body>
 </html>
